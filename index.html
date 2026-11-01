@@ -1,0 +1,1590 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>尼泊尔九十天</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;900&family=Noto+Sans+SC:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&display=swap">
+<style>
+/* Layout: 单栏长文攻略，顶部经幡五色条 + 横向目录，周计划用时间轴，数据用表格 */
+:root{
+  --bg:#F5F7FA; --paper:#FFFFFF; --ink:#18212C; --muted:#586473; --line:#DCE2E9;
+  --accent:#1F5BA6; --gold:#B8800F; --soft:#EAF0F8; --warn-bg:#FFF6E3; --warn-ink:#7A5200;
+  --f-blue:#2E6DB4; --f-white:#E9EDF2; --f-red:#C2372E; --f-green:#2F8A4E; --f-yellow:#E2B437;
+  --display:"Noto Serif SC","Songti SC",serif;
+  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#10151C; --paper:#17202A; --ink:#E5EAF0; --muted:#9AA6B4; --line:#2A3542;
+  --accent:#86B4EE; --gold:#E9B84E; --soft:#1C2836; --warn-bg:#2B2414; --warn-ink:#F0CF86;
+  --f-white:#C9D1DB; color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#10151C; --paper:#17202A; --ink:#E5EAF0; --muted:#9AA6B4; --line:#2A3542;
+  --accent:#86B4EE; --gold:#E9B84E; --soft:#1C2836; --warn-bg:#2B2414; --warn-ink:#F0CF86;
+  --f-white:#C9D1DB; color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.75}
+.flags{display:grid;grid-template-columns:repeat(5,1fr);height:6px}
+.flags i:nth-child(1){background:var(--f-blue)}.flags i:nth-child(2){background:var(--f-white)}
+.flags i:nth-child(3){background:var(--f-red)}.flags i:nth-child(4){background:var(--f-green)}
+.flags i:nth-child(5){background:var(--f-yellow)}
+.wrap{max-width:880px;margin:0 auto;padding-inline:20px;padding-block:0 80px}
+header.hero{padding-block:48px 28px;display:grid;gap:14px}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;color:var(--muted)}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(34px,7vw,56px);line-height:1.15;margin:0;text-wrap:balance}
+.lede{color:var(--muted);max-width:40em;margin:0}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-top:10px}
+.stats div{background:var(--paper);padding:14px 16px}
+.stats b{display:block;font-family:var(--mono);font-weight:500;font-size:20px;font-variant-numeric:tabular-nums}
+.stats span{font-size:13px;color:var(--muted)}
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-20px;padding:10px 20px;overflow-x:auto;white-space:nowrap;scrollbar-width:none}
+nav.toc a{display:inline-block;font-size:13.5px;color:var(--muted);text-decoration:none;padding:4px 10px;border-radius:999px}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--soft);color:var(--accent);outline:none}
+section{padding-top:44px;scroll-margin-top:56px}
+h2{font-family:var(--display);font-weight:900;font-size:26px;margin:0 0 6px;text-wrap:balance;display:flex;gap:12px;align-items:baseline}
+h2 small{font-family:var(--mono);font-size:12px;color:var(--gold);font-weight:500;letter-spacing:.06em}
+h3{font-family:var(--display);font-weight:600;font-size:19px;margin:26px 0 8px}
+p{margin:8px 0}
+.sub{color:var(--muted);margin:0 0 14px}
+a{color:var(--accent)}
+ul.clean{padding-left:1.2em;margin:8px 0}
+ul.clean li{margin:4px 0}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper);margin:12px 0}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12.5px;color:var(--muted);font-weight:500;letter-spacing:.04em;background:var(--soft)}
+tr:last-child td{border-bottom:none}
+td.num,.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tfoot td{font-weight:700;background:var(--soft)}
+.note{background:var(--warn-bg);color:var(--warn-ink);border-radius:8px;padding:12px 16px;font-size:14.5px;margin:14px 0}
+.note b{color:inherit}
+.month{margin-top:28px;padding-top:18px;border-top:2px solid var(--ink)}
+.month-head{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline}
+.month-head h3{margin:0;font-size:22px}
+.month-head .num{color:var(--muted);font-size:13px}
+.tl{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:0}
+.tl li{display:grid;grid-template-columns:118px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.tl li:last-child{border-bottom:none}
+.tl .d{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:2px;font-variant-numeric:tabular-nums}
+.tl .c{min-width:0}
+.tl .c b{display:block;font-size:16px}
+.tl .c p{margin:4px 0;color:var(--muted);font-size:14.5px}
+.tag{display:inline-block;font-size:12px;padding:1px 8px;border-radius:4px;background:var(--soft);color:var(--accent);margin:4px 6px 0 0}
+.tag.learn{color:var(--gold)}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:12px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:16px 18px;min-width:0}
+.card h4{margin:0 0 4px;font-family:var(--display);font-size:17px}
+.card .en{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.card p{font-size:14.5px;margin:6px 0}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;font-size:13.5px;margin:10px 0 0}
+.card dt{color:var(--muted)}
+.card dd{margin:0}
+.checks{list-style:none;padding:0;margin:10px 0;display:grid;gap:2px}
+.checks label{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border-radius:8px;cursor:pointer}
+.checks label:hover{background:var(--soft)}
+.checks input{margin-top:6px;accent-color:var(--accent);width:16px;height:16px;flex:none}
+.checks input:checked + span{color:var(--muted);text-decoration:line-through}
+.checks input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.progress{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.phr td:first-child small{display:block;font-size:12.5px;color:var(--muted);font-weight:400;margin-top:2px}
+.phr .zy{font-size:17px;font-weight:700;color:var(--accent);white-space:nowrap}
+.phr .rm{font-family:var(--mono);font-size:13.5px}
+.daybar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:4px 0 14px}
+.daybar button{font:inherit;font-size:13.5px;border:1px solid var(--accent);color:var(--accent);background:transparent;border-radius:999px;padding:4px 14px;cursor:pointer}
+.daybar button:hover,.daybar button:focus-visible{background:var(--soft);outline:none}
+.kopan{margin:0 0 6px}
+.kopan .sched{grid-template-columns:auto 1fr auto 1fr;gap:4px 12px}
+.kopan .sched dt{font-family:var(--mono);color:var(--accent)}
+@media (max-width:560px){.kopan .sched{grid-template-columns:auto 1fr}}
+.phase{margin-top:26px;padding-top:14px;border-top:2px solid var(--ink)}
+.phase h3{margin:0 0 4px}
+.days{list-style:none;padding:0;margin:0}
+.days li{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:12px 8px;border-bottom:1px dashed var(--line);scroll-margin-top:60px;border-radius:6px}
+.days li:last-child{border-bottom:none}
+.days .dn{font-family:var(--mono);font-variant-numeric:tabular-nums;line-height:1.35}
+.days .dn b{display:block;font-size:13px;color:var(--gold);font-weight:500}
+.days .dn span{font-size:13px;color:var(--accent)}
+.days .dn em{display:block;font-style:normal;font-size:12px;color:var(--muted)}
+.days .dc{min-width:0}
+.days .pl{font-size:12.5px;color:var(--muted)}
+.days .ti{font-weight:700;font-size:15.5px}
+.days .x{margin:2px 0 0;font-size:14.5px}
+.days .st{font-size:12.5px;color:var(--muted);margin-top:4px}
+.days .lt{display:inline-block;font-size:11.5px;padding:0 7px;border-radius:4px;background:var(--soft);color:var(--gold);margin-left:6px;vertical-align:2px;font-weight:500}
+.days dl.dd{display:grid;grid-template-columns:4.2em 1fr;gap:5px 10px;margin:8px 0 0;font-size:14.5px}
+.days dl.dd dt{font-size:12.5px;color:var(--muted);padding-top:2px}
+.days dl.dd dt.w{color:var(--gold)}
+.days dl.dd dt.h{color:var(--accent)}
+.days dl.dd dd{margin:0;min-width:0}
+.days .lt.rest{color:var(--muted)}
+.days li.today{background:var(--soft);outline:2px solid var(--accent)}
+@media (max-width:560px){.days li{grid-template-columns:72px 1fr;gap:10px}}
+.mapbox{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--paper);margin:12px 0}
+.mapbox svg{display:block;width:100%;min-width:640px;height:auto}
+.m-bg{fill:var(--paper)}
+.m-country{fill:var(--muted);opacity:.45;font-size:22px;letter-spacing:.3em;font-family:var(--display)}
+.m-north path{fill:var(--muted)}.m-north text{fill:var(--muted);font-size:12px;text-anchor:middle;font-family:var(--mono)}
+.m-legend text{fill:var(--muted);font-size:12.5px}
+.m-road{stroke:var(--accent);stroke-width:2.5;fill:none}
+.m-trek{stroke:var(--f-green);stroke-width:2.5;fill:none;stroke-dasharray:6 5}
+.m-fly{stroke:var(--gold);stroke-width:2.5;fill:none;stroke-dasharray:2 6;stroke-linecap:round}
+.m-side{stroke:var(--muted);stroke-width:1.6;fill:none;stroke-dasharray:4 4}
+.m-seg{fill:var(--ink);font-size:12.5px;paint-order:stroke;stroke:var(--paper);stroke-width:4px}
+.m-seg-f{fill:var(--gold)}.m-seg-g{fill:var(--f-green)}
+.m-node circle{fill:var(--accent);stroke:var(--paper);stroke-width:2.5}
+.m-node.m-minor circle{fill:var(--muted)}
+.m-node text{fill:var(--ink);font-size:15px;font-weight:700;paint-order:stroke;stroke:var(--paper);stroke-width:4px}
+.m-node.m-minor text{font-size:12.5px;font-weight:500}
+.m-node .m-sub{font-size:11.5px;font-weight:400;fill:var(--muted)}
+.m-inset rect{fill:var(--soft);stroke:var(--line)}
+.m-inset .m-node text{stroke:var(--soft)}
+.m-inset-title{fill:var(--muted);font-size:12px;font-family:var(--mono);letter-spacing:.06em}
+.tr td:nth-child(3){min-width:220px}
+.eng td{font-size:13.5px}
+.eng td:nth-child(3),.eng td:nth-child(4){min-width:220px}
+.eng{min-width:980px}
+.en-n{font-family:var(--mono);font-weight:600;font-size:.82em;color:var(--accent);background:var(--soft);padding:0 5px;margin:0 3px;border-radius:4px;white-space:nowrap;letter-spacing:0}
+.nm .nm-en{font-family:var(--mono);font-weight:700;font-size:16px;color:var(--accent)}
+.nm .nm-np{font-size:17px;font-family:"Noto Sans Devanagari","Kohinoor Devanagari",sans-serif}
+.m-en{fill:var(--accent);font-family:var(--mono);font-size:11.5px;font-weight:600}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+@media (max-width:560px){
+  .tl li{grid-template-columns:1fr;gap:4px}
+  h2{font-size:23px}
+  .en-n{white-space:normal}
+  /* 手机上表格改成一行一张卡片，不用左右滑 */
+  .tbl{overflow:visible;border:0;background:none}
+  .tbl table,.tbl .eng{min-width:0}
+  .tbl table,.tbl tbody,.tbl tr,.tbl td{display:block;width:auto}
+  .tbl thead{display:none}
+  .tbl tr{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin:0 0 10px}
+  .tbl td{border:0;padding:3px 0;min-width:0!important;white-space:normal}
+  .tbl td[data-label]::before{content:attr(data-label);display:block;font-size:12px;color:var(--muted);font-weight:400;letter-spacing:.02em}
+  .tbl td:first-child{font-weight:700;font-size:15.5px}
+  .tbl td:first-child::before{display:none}
+  .tbl td:empty{display:none}
+  .phr .zy{white-space:normal}
+  .map-hint{display:block}
+}
+.map-hint{display:none;font-size:12.5px;color:var(--muted);margin:-4px 0 8px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="flags" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">NEPAL · 90 DAYS · 2026.11.02 → 2027.01.30</div>
+  <h1>尼泊尔九十天</h1>
+  <p class="lede">一份给 35 岁、刚离职、想把这段空档用好的人的完整攻略。按季节排路线：天最晴的时候上山，最冷的时候往南走，中间用一个月学冥想。小众城镇优先，每一站都安排一样能学的东西。</p>
+  <div class="stats">
+    <div><b>90 天</b><span>一次性申请 90 天签证</span></div>
+    <div><b>17 站</b><span>每天排满，每周休半天</span></div>
+    <div><b>2.4–3.9 万</b><span>人民币，不含国际机票</span></div>
+    <div><b>4130 m</b><span>最高点 · ABC 大本营</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="目录">
+  <a href="#prep">出发前</a><a href="#names">地名对照</a><a href="#route">路线总览</a><a href="#map">地图</a><a href="#climate">气候穿衣</a><a href="#plan">行程总览</a><a href="#daily">每日行程</a><a href="#towns">小众城镇</a><a href="#trek">徒步</a><a href="#learn">学习</a><a href="#classes">报班</a><a href="#food">饮食</a><a href="#budget">费用</a><a href="#move">公共交通</a><a href="#safe">安全</a><a href="#solo">女生独行</a><a href="#info">实用信息</a><a href="#fest">节日</a><a href="#nepali">尼泊尔语</a><a href="#job">找工作</a><a href="#todo">待办清单</a>
+</nav>
+
+<!-- 出发前 -->
+<section id="prep">
+  <h2>出发前准备 <small>PREP</small></h2>
+  <p class="sub">这些事情越早做越好，Kopan 课程名额和保险尤其不能拖。</p>
+
+  <h3>签证</h3>
+  <ul class="clean">
+    <li>落地加德满都特里布万机场办理，入境时<b>直接申请 90 天</b>，省去中途续签。</li>
+    <li>中国护照目前享受免签证费政策，但续签是否收费、免费天数以<b>中国驻尼泊尔大使馆官网</b>为准，出发前核对一次。</li>
+    <li>护照有效期 6 个月以上，带 2 张白底证件照备用（徒步许可证也要用）。</li>
+    <li>尼泊尔旅游签证一个自然年最多停留 150 天。本行程 90 天，在范围内。</li>
+  </ul>
+
+  <h3>保险</h3>
+  <p>必须买覆盖<b>高海拔徒步</b>的旅行险。看条款时确认三点：最高覆盖海拔在 5000 米以上；包含<b>直升机救援</b>；保期覆盖全部 90 天。普通旅游险通常把徒步列为除外责任，买错等于没买。</p>
+
+  <h3>钱和卡</h3>
+  <ul class="clean">
+    <li>带一部分<b>美元现金</b>（新版、无折痕），在加德满都 Thamel 区换卢比，汇率比机场好。</li>
+    <li>当地 ATM 单次取款上限通常 3.5 万到 4 万卢比，每次手续费约 500 卢比，尽量一次多取。</li>
+    <li>带一张银联卡加一张 Visa 或万事达卡，两张分开放。小城镇 ATM 少，进山前和去小镇前把现金备足。</li>
+  </ul>
+
+  <h3>国内的事</h3>
+  <ul class="clean">
+    <li>社保：确认断缴影响（买房、落户、医保），需要的话委托代缴或设置灵活就业缴费。</li>
+    <li>失业金：先在当地社保局或线上办好登记，弄清楚领取期间要不要按月签到。</li>
+    <li>手机号保持开通，开好国际漫游或绑定 eSIM，银行验证码要靠它收。</li>
+  </ul>
+</section>
+
+<!-- 地名对照 -->
+<section id="names">
+  <h2>地名对照 <small>PLACE NAMES</small></h2>
+  <p class="sub">问路、打车、买票时说英文名；遇到不太会英语的本地人，直接把尼泊尔文那一栏给他看。整份攻略里的地名后面都标了英文。</p>
+  <div class="tbl"><table class="nm">
+    <thead><tr><th>中文</th><th>English（说这个）</th><th>नेपाली（给当地人看）</th><th>是哪里</th></tr></thead>
+    <tbody>
+      <tr><td>加德满都</td><td class="nm-en">Kathmandu</td><td class="nm-np">काठमाडौं</td><td>首都</td></tr>
+      <tr><td>特莱平原</td><td class="nm-en">Terai</td><td class="nm-np">तराई</td><td>南部和印度接壤的平原，见下面说明</td></tr>
+      <tr><td>泰米尔</td><td class="nm-en">Thamel</td><td class="nm-np">ठमेल</td><td>背包客区，你住的地方</td></tr>
+      <tr><td>帕坦</td><td class="nm-en">Patan / Lalitpur</td><td class="nm-np">पाटन / ललितपुर</td><td>古城，学习期住的 Jhamsikhel 就在这里</td></tr>
+      <tr><td>巴克塔普尔（巴德岗）</td><td class="nm-en">Bhaktapur</td><td class="nm-np">भक्तपुर</td><td>古城，住 2 晚</td></tr>
+      <tr><td>纳加阔特</td><td class="nm-en">Nagarkot</td><td class="nm-np">नगरकोट</td><td>山顶看日出</td></tr>
+      <tr><td>昌古纳拉扬</td><td class="nm-en">Changu Narayan</td><td class="nm-np">चाँगुनारायण</td><td>古神庙</td></tr>
+      <tr><td>潘瑙蒂</td><td class="nm-en">Panauti</td><td class="nm-np">पनौती</td><td>古镇一日游</td></tr>
+      <tr><td>博达哈</td><td class="nm-en">Boudha</td><td class="nm-np">बौद्ध</td><td>大佛塔</td></tr>
+      <tr><td>猴庙</td><td class="nm-en">Swayambhunath</td><td class="nm-np">स्वयम्भू</td><td>山顶佛塔</td></tr>
+      <tr><td>帕斯帕提那</td><td class="nm-en">Pashupatinath</td><td class="nm-np">पशुपतिनाथ</td><td>印度教神庙</td></tr>
+      <tr><td>班迪普尔</td><td class="nm-en">Bandipur</td><td class="nm-np">बन्दीपुर</td><td>山脊老镇</td></tr>
+      <tr><td>登布里（下车点）</td><td class="nm-en">Dumre</td><td class="nm-np">दुम्रे</td><td>去班迪普尔在这下车</td></tr>
+      <tr><td>博卡拉</td><td class="nm-en">Pokhara</td><td class="nm-np">पोखरा</td><td>徒步大本营</td></tr>
+      <tr><td>Ghorepani</td><td class="nm-en">Ghorepani</td><td class="nm-np">घोरेपानी</td><td>Poon Hill 脚下</td></tr>
+      <tr><td>琼弄</td><td class="nm-en">Chhomrong</td><td class="nm-np">छोमरोङ</td><td>徒步补给点</td></tr>
+      <tr><td>坦森</td><td class="nm-en">Tansen</td><td class="nm-np">तानसेन</td><td>山城</td></tr>
+      <tr><td>布特瓦尔（转车）</td><td class="nm-en">Butwal</td><td class="nm-np">बुटवल</td><td>去蓝毗尼在这换车</td></tr>
+      <tr><td>蓝毗尼</td><td class="nm-en">Lumbini</td><td class="nm-np">लुम्बिनी</td><td>佛陀诞生地</td></tr>
+      <tr><td>迦毗罗卫</td><td class="nm-en">Kapilvastu / Tilaurakot</td><td class="nm-np">कपिलवस्तु / तिलौराकोट</td><td>古城遗址</td></tr>
+      <tr><td>奇特旺（住 Sauraha）</td><td class="nm-en">Chitwan / Sauraha</td><td class="nm-np">चितवन / सौराहा</td><td>国家公园</td></tr>
+      <tr><td>纳拉扬加尔（转车）</td><td class="nm-en">Narayangarh</td><td class="nm-np">नारायणगढ</td><td>去贾纳克布尔在这坐车</td></tr>
+      <tr><td>贾纳克布尔</td><td class="nm-en">Janakpur</td><td class="nm-np">जनकपुर</td><td>平原圣城</td></tr>
+      <tr><td>纳莫布达</td><td class="nm-en">Namo Buddha</td><td class="nm-np">नमोबुद्ध</td><td>舍身饲虎圣地</td></tr>
+      <tr><td>杜利凯尔</td><td class="nm-en">Dhulikhel</td><td class="nm-np">धुलिखेल</td><td>去纳莫布达的起点</td></tr>
+      <tr><td>帕平</td><td class="nm-en">Pharping</td><td class="nm-np">फर्पिङ</td><td>修行洞</td></tr>
+      <tr><td>努瓦科特</td><td class="nm-en">Nuwakot</td><td class="nm-np">नुवाकोट</td><td>老王宫</td></tr>
+      <tr><td>基尔蒂普尔</td><td class="nm-en">Kirtipur</td><td class="nm-np">कीर्तिपुर</td><td>山顶小城</td></tr>
+      <tr><td>奔加马蒂、柯卡纳</td><td class="nm-en">Bungamati, Khokana</td><td class="nm-np">बुङमती, खोकना</td><td>木雕村</td></tr>
+      <tr><td>巴内帕（转车）</td><td class="nm-en">Banepa</td><td class="nm-np">बनेपा</td><td>去潘瑙蒂的转车点</td></tr>
+      <tr><td>Ratna Park 老巴士站</td><td class="nm-en">Ratna Park</td><td class="nm-np">रत्नपार्क</td><td>市中心公交站</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>Terai（特莱平原）是哪里：</b>尼泊尔南部、紧挨印度的一长条平原，海拔只有一两百米，地势平、天气热，是全国的粮仓。尼泊尔从北往南分三层：北边喜马拉雅雪山，中间是加德满都、博卡拉所在的山区，最南边就是 Terai。你行程第 3 段“南下平原”去的<b>蓝毗尼、迦毗罗卫、奇特旺、贾纳克布尔</b>都在 Terai，转车的布特瓦尔、纳拉扬加尔也是；坦森还在山上，不算。12 月的 Terai 白天 20 度出头，早上常有大雾，会耽误早班车和航班，赶车别订太早的。这里文化更接近印度北部，人们说迈蒂利语、博杰普尔语、塔鲁语，印地语也通。</div>
+</section>
+
+<!-- 路线总览 -->
+<section id="route">
+  <h2>路线总览 <small>ROUTE</small></h2>
+  <p class="sub">三个月，三种状态：上山、向内、往南。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>阶段</th><th>日期</th><th>地点</th><th>主题</th></tr></thead>
+    <tbody>
+      <tr><td>第 1 段</td><td class="num">11.02 – 11.09</td><td>住 Thamel，当天往返帕坦、潘瑙蒂；纳加阔特 1 晚，巴克塔普尔古城 2 晚</td><td>古城、灯节</td></tr>
+      <tr><td>第 2 段</td><td class="num">11.10 – 11.30</td><td>班迪普尔 → 博卡拉 → Poon Hill 加 ABC → 博卡拉</td><td>滑翔伞、徒步、皮划艇</td></tr>
+      <tr><td>第 3 段</td><td class="num">12.01 – 12.14</td><td>坦森 → 蓝毗尼 → 奇特旺 → 贾纳克布尔 → 飞回加德满都</td><td>手艺、丛林、平原</td></tr>
+      <tr><td>第 4 段</td><td class="num">12.15 – 01.30</td><td>帕坦学习基地、内观、纳莫布达、帕平、努瓦科特、Kopan</td><td>冥想、报班、求职</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>为什么这么排：</b>顺时针绕一圈，不走回头路。趁 11 月天最稳先上山，12 月去南部平原，那里白天二十几度。12 月中以后回到加德满都谷地安心学习、禅修和求职，谷地白天 17–19 度，最后从加德满都离境。</div>
+</section>
+
+<!-- 路线地图 -->
+<section id="map">
+  <h2>路线地图 <small>MAP</small></h2>
+  <p class="sub">顺时针绕一圈：加德满都向西到博卡拉，往南下到平原，再向东，最后从贾纳克布尔飞回加德满都，一段回头路都不走。位置是示意，不是精确比例。</p>
+  <p class="map-hint">← 地图可以左右滑动，也可以双指放大 →</p>
+  <div class="mapbox">
+  <svg viewBox="0 0 940 610" role="img" aria-label="尼泊尔九十天路线示意图">
+    <defs>
+      <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--accent)"/></marker>
+      <marker id="arG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--f-green)"/></marker>
+      <marker id="arF" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--gold)"/></marker>
+    </defs>
+    <rect x="0" y="0" width="940" height="610" rx="10" class="m-bg"/>
+    <text x="620" y="36" class="m-country">中 国 · 西 藏</text>
+    <text x="520" y="590" class="m-country">印 度</text>
+    <g class="m-north"><path d="M905,22 L912,44 L905,39 L898,44 z"/><text x="905" y="60">N</text></g>
+
+    <g class="m-legend" transform="translate(24,24)">
+      <line x1="0" y1="8" x2="34" y2="8" class="m-road"/><text x="42" y="12">公路（大巴、吉普）</text>
+      <line x1="0" y1="30" x2="34" y2="30" class="m-trek"/><text x="42" y="34">徒步</text>
+      <line x1="0" y1="52" x2="34" y2="52" class="m-fly"/><text x="42" y="56">飞机</text>
+      <line x1="0" y1="74" x2="34" y2="74" class="m-side"/><text x="42" y="78">往返小环线</text>
+    </g>
+
+    <!-- 主环线 -->
+    <path d="M714,293 L476,232" class="m-road" marker-end="url(#ar)"/>
+    <path d="M460,224 L357,159" class="m-road" marker-end="url(#ar)"/>
+    <path d="M344,162 L229,240" class="m-road" marker-end="url(#ar)"/>
+    <path d="M219,256 L155,349" class="m-road" marker-end="url(#ar)"/>
+    <path d="M160,358 L482,331" class="m-road" marker-end="url(#ar)"/>
+    <path d="M500,336 L882,562" class="m-road" marker-end="url(#ar)"/>
+    <path d="M884,558 Q880,390 731,302" class="m-fly" marker-end="url(#arF)"/>
+    <!-- 徒步环线 -->
+    <path d="M343,148 L274,104 L314,70 Q350,108 351,144" class="m-trek" marker-end="url(#arG)"/>
+    <!-- 往返小环线 -->
+    <path d="M144,355 L92,335" class="m-side"/>
+    <path d="M716,289 L682,243" class="m-side"/>
+
+    <!-- 路段时长 -->
+    <text x="600" y="250" class="m-seg">① 旅游大巴 4–5 小时</text>
+    <text x="418" y="182" class="m-seg" text-anchor="middle">② 吉普＋大巴 3 小时</text>
+    <text x="300" y="214" class="m-seg">④ 大巴 5–6 小时</text>
+    <text x="194" y="305" class="m-seg">⑤ 大巴 3–4 小时</text>
+    <text x="320" y="366" class="m-seg" text-anchor="middle">⑥ 大巴 5–6 小时</text>
+    <text x="700" y="470" class="m-seg">⑦ 大巴 6–7 小时</text>
+    <text x="842" y="420" class="m-seg m-seg-f" text-anchor="end">⑧ 飞机 30 分钟</text>
+    <text x="200" y="66" class="m-seg m-seg-g" text-anchor="end">③ 徒步 11 天</text>
+    <text x="115" y="362" class="m-seg" text-anchor="middle">一日游</text>
+
+    <!-- 地点 -->
+    <g class="m-node"><circle cx="722" cy="296" r="8"/><text x="708" y="318" text-anchor="end">加德满都谷地</text><text x="708" y="334" text-anchor="end" class="m-sub">起点 · 终点 · 学习期</text></g>
+    <g class="m-node m-minor"><circle cx="677" cy="237" r="5"/><text x="664" y="232" text-anchor="end">努瓦科特</text></g>
+    <g class="m-node"><circle cx="467" cy="229" r="6"/><text x="467" y="254" text-anchor="middle">班迪普尔</text></g>
+    <g class="m-node"><circle cx="349" cy="153" r="7"/><text x="362" y="158">博卡拉</text><text x="362" y="174" class="m-sub">徒步大本营</text></g>
+    <g class="m-node m-minor"><circle cx="268" cy="100" r="5"/><text x="256" y="104" text-anchor="end">Poon Hill</text></g>
+    <g class="m-node m-minor"><circle cx="318" cy="64" r="5"/><text x="330" y="60">ABC 4130 m</text></g>
+    <g class="m-node"><circle cx="223" cy="248" r="6"/><text x="210" y="252" text-anchor="end">坦森</text></g>
+    <g class="m-node"><circle cx="150" cy="358" r="6"/><text x="150" y="383" text-anchor="middle">蓝毗尼</text></g>
+    <g class="m-node m-minor"><circle cx="86" cy="332" r="5"/><text x="86" y="320" text-anchor="middle">迦毗罗卫</text></g>
+    <g class="m-node"><circle cx="492" cy="330" r="6"/><text x="492" y="356" text-anchor="middle">奇特旺</text></g>
+    <g class="m-node"><circle cx="890" cy="568" r="6"/><text x="876" y="596" text-anchor="end">贾纳克布尔</text></g>
+
+    <!-- 谷地放大 -->
+    <g class="m-inset">
+      <rect x="24" y="414" width="340" height="180" rx="8"/>
+      <text x="38" y="436" class="m-inset-title">加德满都谷地放大</text>
+      <path d="M128,486 Q210,522 272,541" class="m-side"/>
+      <path d="M130,474 Q210,436 284,464" class="m-road" marker-end="url(#ar)"/>
+      <path d="M286,477 L240,496" class="m-road" marker-end="url(#ar)"/>
+      <path d="M224,503 Q176,500 130,486" class="m-road" marker-end="url(#ar)"/>
+      <g class="m-node"><circle cx="120" cy="480" r="6"/><text x="104" y="476" text-anchor="end">加德满都</text></g>
+      <g class="m-node m-minor"><circle cx="112" cy="512" r="4"/><text x="100" y="516" text-anchor="end">帕坦</text></g>
+      <g class="m-node m-minor"><circle cx="170" cy="470" r="4"/><text x="178" y="474">博达哈</text></g>
+      <g class="m-node m-minor"><circle cx="176" cy="452" r="4"/><text x="184" y="456">Kopan</text></g>
+      <g class="m-node m-minor"><circle cx="134" cy="446" r="4"/><text x="126" y="450" text-anchor="end">内观中心</text></g>
+      <g class="m-node"><circle cx="232" cy="500" r="5"/><text x="226" y="520" text-anchor="middle">巴克塔普尔</text></g>
+      <g class="m-node"><circle cx="292" cy="470" r="5"/><text x="300" y="474">纳加阔特</text></g>
+      <g class="m-node"><circle cx="280" cy="545" r="5"/><text x="266" y="566" text-anchor="middle">潘瑙蒂</text></g>
+      <g class="m-node m-minor"><circle cx="330" cy="552" r="4"/><text x="330" y="576" text-anchor="middle">纳莫布达</text></g>
+      <g class="m-node m-minor"><circle cx="96" cy="562" r="4"/><text x="108" y="566">帕平</text></g>
+      <g class="m-node m-minor"><circle cx="78" cy="526" r="4"/><text x="70" y="545" text-anchor="middle">基尔蒂普尔</text></g>
+    </g>
+  </svg>
+  </div>
+  <div class="note"><b>“博卡拉进来出去”是什么意思：</b>博卡拉是徒步的大本营。你从博卡拉出发上山，下山也回到博卡拉，大行李一直寄存在客栈，所以在地图上博卡拉“进一次、出一次”，这不算走回头路。山里那段也大部分不重复：上山走 Poon Hill 一侧，回程走琼弄一侧。只有琼弄到 ABC 是一条死胡同河谷，进去和出来只能走同一条路，这是所有 ABC 路线都绕不开的。</div>
+</section>
+
+<!-- 气候 -->
+<section id="climate">
+  <h2>气候与穿衣 <small>CLIMATE</small></h2>
+  <p class="sub">整个行程都在旱季，基本不下雨。难点是昼夜温差大：白天穿短袖，晚上要穿羽绒服。气温是往年平均的大概范围。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>时间</th><th>地点</th><th>海拔</th><th>白天</th><th>夜里</th><th>天气特点</th></tr></thead>
+    <tbody>
+      <tr><td class="num">11 月上旬</td><td>加德满都谷地</td><td class="num">1400 m</td><td class="num">23°C</td><td class="num">10°C</td><td>晴，空气通透，正好赶上灯节</td></tr>
+      <tr><td class="num">11 月上旬</td><td>纳加阔特</td><td class="num">2175 m</td><td class="num">18°C</td><td class="num">7°C</td><td>清晨有云海，晚上要穿羽绒</td></tr>
+      <tr><td class="num">11 月中</td><td>班迪普尔、博卡拉</td><td class="num">820–1030 m</td><td class="num">24°C</td><td class="num">11°C</td><td>温暖，湖边最舒服</td></tr>
+      <tr><td class="num">11 月中下旬</td><td>ABC 大本营</td><td class="num">4130 m</td><td class="num">0–8°C</td><td class="num">−10 到 −12°C</td><td>上午晴，下午容易起云；茶屋没有暖气</td></tr>
+      <tr><td class="num">12 月初</td><td>坦森</td><td class="num">1350 m</td><td class="num">19°C</td><td class="num">8°C</td><td>晴天多，常见云海</td></tr>
+      <tr><td class="num">12 月上旬</td><td>蓝毗尼、奇特旺</td><td class="num">100–150 m</td><td class="num">23°C</td><td class="num">10°C</td><td>早上有雾，常到 10 点才散</td></tr>
+      <tr><td class="num">12 月中</td><td>贾纳克布尔</td><td class="num">75 m</td><td class="num">22°C</td><td class="num">9°C</td><td>大雾天会延误航班</td></tr>
+      <tr><td class="num">12 月中–1 月底</td><td>加德满都谷地、Kopan、内观中心</td><td class="num">1350–1400 m</td><td class="num">17–19°C</td><td class="num">1–3°C</td><td>白天晒太阳舒服，早晚冷，室内没有暖气</td></tr>
+    </tbody>
+  </table></div>
+  <h3>怎么带衣服</h3>
+  <ul class="clean">
+    <li><b>洋葱式穿法</b>：速干 T 恤 2–3 件、长袖 2 件、抓绒 1 件、轻薄羽绒 1 件、防风外套 1 件。徒步用的厚羽绒服和睡袋到 Thamel 租。</li>
+    <li>室内普遍没有暖气，12 月以后带上保暖内衣、厚袜子和一个热水袋，当地药店和超市也能买到。</li>
+    <li>寺院和平原地区准备一条过膝的长裙或宽松长裤，外加一条大围巾，既能挡风又能遮肩。</li>
+    <li>高原紫外线很强：墨镜、防晒霜、帽子和润唇膏必带。</li>
+  </ul>
+</section>
+
+<!-- 逐周行程 -->
+<section id="plan">
+  <h2>行程总览 <small>ITINERARY</small></h2>
+  <p class="sub">11 月 2 日晚上落地，1 月 30 日离境，正好 90 天。每天 6 点前后起床，排满，每周留半天洗衣服补觉。每天的细节看后面的每日行程。<span class="tag">地点</span><span class="tag learn">学习</span></p>
+
+  <div class="month">
+    <div class="month-head"><h3>第 1 段 · 加德满都谷地</h3><span class="num">DAY 1–8 · 11.02 – 11.09</span></div>
+    <ol class="tl">
+      <li><div class="d">11.02 – 11.05</div><div class="c">
+        <b>加德满都和帕坦</b>
+        <p>猴庙、两座杜巴广场、帕坦博物馆、博达哈、去 Kopan 报名 1 月的短期课程、帕斯帕提那晚祷。穿插网球、攀岩、健身和英语课。</p>
+        <span class="tag">加德满都</span><span class="tag">帕坦</span><span class="tag learn">网球 · 攀岩 · 英语</span>
+      </div></li>
+      <li><div class="d">11.06 – 11.09</div><div class="c">
+        <b>潘瑙蒂一日游，然后纳加阔特 1 晚、巴克塔普尔古城 2 晚，正好赶上灯节</b>
+        <p>前 5 晚住 Thamel，潘瑙蒂坐直达公交当天往返。11 月 7 日把行李箱寄存在 Thamel，只背双肩包上纳加阔特看日落日出，沿山脊徒步到昌古纳拉扬，再住进巴克塔普尔古城：一日游的游客早上来、傍晚走，清晨和夜里的古城最好看，住在里面多日票不加钱。离开加德满都谷地前的最后一天就在古城里过。</p>
+        <span class="tag">潘瑙蒂</span><span class="tag">纳加阔特</span><span class="tag">巴克塔普尔</span><span class="tag learn">陶艺 · 唐卡</span>
+      </div></li>
+    </ol>
+  </div>
+
+  <div class="month">
+    <div class="month-head"><h3>第 2 段 · 西行上山</h3><span class="num">DAY 9–29 · 11.10 – 11.30</span></div>
+    <ol class="tl">
+      <li><div class="d">11.10 – 11.13</div><div class="c">
+        <b>班迪普尔 2 晚，到博卡拉飞滑翔伞、办许可</b>
+        <span class="tag">班迪普尔</span><span class="tag">博卡拉</span><span class="tag learn">滑翔伞</span>
+      </div></li>
+      <li><div class="d">11.14 – 11.24</div><div class="c">
+        <b>Poon Hill 加 ABC 徒步 11 天</b>
+        <p>每天爬升不超过 700 米、距离不超过 15 公里，背夫背大包，你只背 5 公斤。11 月中下旬是徒步季里天最稳的时候。</p>
+        <span class="tag">安纳普尔纳</span><span class="tag learn">高海拔徒步</span>
+      </div></li>
+      <li><div class="d">11.25 – 11.30</div><div class="c">
+        <b>博卡拉：恢复日、4 天皮划艇入门营、双湖骑行、做饭课</b>
+        <span class="tag">博卡拉</span><span class="tag learn">皮划艇 · 瑜伽 · 做饭</span>
+      </div></li>
+    </ol>
+  </div>
+
+  <div class="month">
+    <div class="month-head"><h3>第 3 段 · 南下平原，飞回谷地</h3><span class="num">DAY 30–43 · 12.01 – 12.14</span></div>
+    <ol class="tl">
+      <li><div class="d">12.01 – 12.03</div><div class="c"><b>坦森：山城日出、宫殿遗址、Dhaka 织布课</b>
+        <span class="tag">坦森</span><span class="tag learn">织布</span></div></li>
+      <li><div class="d">12.04 – 12.07</div><div class="c"><b>蓝毗尼：佛陀诞生地、骑车逛寺院、迦毗罗卫古城、禅修半天</b>
+        <span class="tag">蓝毗尼</span><span class="tag">迦毗罗卫</span><span class="tag learn">禅修</span></div></li>
+      <li><div class="d">12.08 – 12.10</div><div class="c"><b>奇特旺：独木舟、丛林徒步、全天吉普游猎</b>
+        <span class="tag">奇特旺</span></div></li>
+      <li><div class="d">12.11 – 12.14</div><div class="c"><b>贾纳克布尔：米提拉画两天，飞回加德满都，赶上 Kopan 尼寺 12 月 14 日的佛塔开光</b>
+        <span class="tag">贾纳克布尔</span><span class="tag learn">米提拉画</span></div></li>
+    </ol>
+  </div>
+
+  <div class="month">
+    <div class="month-head"><h3>第 4 段 · 谷地学习期</h3><span class="num">DAY 44–90 · 12.15 – 01.30</span></div>
+    <ol class="tl">
+      <li><div class="d">12.15 – 12.20</div><div class="c"><b>搬进帕坦学习基地：网球、尼泊尔语、攀岩、唐卡，每天一个景点</b>
+        <span class="tag">帕坦</span><span class="tag learn">网球 · 尼泊尔语 · 攀岩 · 唐卡</span></div></li>
+      <li><div class="d">12.21 – 01.01</div><div class="c"><b>Dhamma Shringa 十日内观，在禅修里跨年</b>
+        <p>免费，结束时随喜捐款。日期以 dhamma.org 公布的为准。</p>
+        <span class="tag">内观中心</span><span class="tag learn">内观</span></div></li>
+      <li><div class="d">01.02 – 01.07</div><div class="c"><b>纳莫布达徒步过夜、帕平修行洞、努瓦科特老王宫过夜</b>
+        <span class="tag">纳莫布达</span><span class="tag">帕平</span><span class="tag">努瓦科特</span></div></li>
+      <li><div class="d">01.08 – 01.14</div><div class="c"><b>Kopan 寺 7 天短期课程</b>
+        <p>课程和日期出发前打电话确认，没有合适的课就换成纳莫布达寺院短住。</p>
+        <span class="tag">Kopan</span><span class="tag learn">佛学</span></div></li>
+      <li><div class="d">01.15 – 01.30</div><div class="c"><b>学习营加求职冲刺，离境</b>
+        <p>木雕村、唐卡密集课、户外攀岩、Shivapuri 登山。改简历、远程面试、模拟面试，写三个月总结。</p>
+        <span class="tag">帕坦</span><span class="tag">巴克塔普尔</span><span class="tag learn">求职 · 唐卡 · 攀岩 · 英语</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 每日行程 -->
+<section id="daily">
+  <h2>每日行程 <small>DAY BY DAY</small></h2>
+  <p class="sub">90 天每天的安排。日期按 11 月 2 日晚上落地计算。课程、节日和车程都会变动，特种兵版：每天都写了上午、下午、晚上做什么，怎么去，花多少钱，要注意什么。标着“半天休整”的那天下午用来洗衣服补觉，别省掉。身体不舒服就把当天砍掉一半。</p>
+  <div class="daybar">
+    <span class="progress" id="dayStatus"></span>
+    <button type="button" id="jumpToday" hidden>跳到今天</button>
+  </div>
+  <div class="kopan card" id="kopanCard">
+    <h4>十日内观一天的作息</h4>
+    <p class="en">Dhamma Shringa 等葛印卡内观中心通用的作息，以中心实际安排为准</p>
+    <dl class="sched">
+      <dt>04:00</dt><dd>起床</dd><dt>04:30</dt><dd>打坐</dd><dt>06:30</dt><dd>早饭、休息</dd>
+      <dt>08:00</dt><dd>集体打坐</dd><dt>11:00</dt><dd>午饭、休息</dd><dt>13:00</dt><dd>打坐</dd>
+      <dt>17:00</dt><dd>茶点</dd><dt>18:00</dt><dd>集体打坐</dd><dt>19:00</dt><dd>开示录音</dd><dt>21:30</dt><dd>熄灯</dd>
+    </dl>
+  </div>
+  <div id="dayList"></div>
+</section>
+
+<!-- 小众城镇 -->
+<section id="towns">
+  <h2>小众城镇速查 <small>TOWNS</small></h2>
+  <p class="sub">车程是正常路况下的估计，山路堵车或塌方会慢很多，两个地方之间留出一整天。</p>
+  <div class="grid2">
+    <div class="card"><h4>潘瑙蒂</h4><div class="en">Panauti · 1400 m</div>
+      <p>纽瓦尔古镇，社区民宿体系成熟，几乎没有旅游团。</p>
+      <dl><dt>怎么去</dt><dd>加德满都打车 1–1.5 小时</dd><dt>住</dt><dd>民宿含两餐，约 150–250 元</dd><dt>停留</dt><dd>2–3 晚</dd></dl></div>
+    <div class="card"><h4>班迪普尔</h4><div class="en">Bandipur · 1030 m</div>
+      <p>步行老街加雪山日出，加德满都和博卡拉之间最值得停的地方。</p>
+      <dl><dt>怎么去</dt><dd>大巴到 Dumre 下车，转吉普 30 分钟</dd><dt>住</dt><dd>老宅客栈 100–300 元</dd><dt>停留</dt><dd>2–3 晚</dd></dl></div>
+    <div class="card"><h4>纳莫布达</h4><div class="en">Namobuddha · 1750 m</div>
+      <p>山顶藏传寺院，有冥想课程和寺院住宿。</p>
+      <dl><dt>怎么去</dt><dd>加德满都约 2 小时，或从 Dhulikhel 徒步 4–5 小时</dd><dt>住</dt><dd>寺院客房或山间小屋</dd><dt>停留</dt><dd>3–7 晚</dd></dl></div>
+    <div class="card"><h4>帕平</h4><div class="en">Pharping · 1400 m</div>
+      <p>藏传佛教朝圣地，修行洞和闭关中心集中。</p>
+      <dl><dt>怎么去</dt><dd>加德满都约 1 小时</dd><dt>住</dt><dd>寺院客房、小客栈</dd><dt>停留</dt><dd>2–7 晚</dd></dl></div>
+    <div class="card"><h4>贾纳克布尔</h4><div class="en">Janakpur · 75 m</div>
+      <p>平原圣城，米提拉画发源地，文化和山区完全不同。</p>
+      <dl><dt>怎么去</dt><dd>加德满都飞 25 分钟，或大巴 8–10 小时</dd><dt>住</dt><dd>城区酒店 100–250 元</dd><dt>停留</dt><dd>3–4 晚</dd></dl></div>
+    <div class="card"><h4>坦森</h4><div class="en">Tansen · 1350 m</div>
+      <p>山城老街、Rani Mahal 宫殿遗址、Dhaka 手织布。</p>
+      <dl><dt>怎么去</dt><dd>蓝毗尼 3–4 小时，博卡拉 5–6 小时</dd><dt>住</dt><dd>客栈 80–200 元</dd><dt>停留</dt><dd>3 晚</dd></dl></div>
+    <div class="card"><h4>巴迪亚（备选）</h4><div class="en">Bardia NP · 150 m</div>
+      <p>尼泊尔最原始的国家公园，看老虎机会最大，游客比奇特旺少很多。</p>
+      <dl><dt>怎么去</dt><dd>蓝毗尼 6–7 小时，或飞 Nepalgunj 再坐车 2 小时</dd><dt>住</dt><dd>丛林小屋含餐 200–400 元</dd><dt>停留</dt><dd>3–4 晚</dd></dl></div>
+    <div class="card"><h4>伊拉姆（备选）</h4><div class="en">Ilam · 1200 m</div>
+      <p>东部茶园，可以去茶厂学制茶。时间富余或者想看不一样的东部可以加。</p>
+      <dl><dt>怎么去</dt><dd>飞 Bhadrapur 再坐车 3 小时</dd><dt>住</dt><dd>茶园民宿 100–200 元</dd><dt>停留</dt><dd>3 晚</dd></dl></div>
+  </div>
+</section>
+
+<!-- 徒步 -->
+<section id="trek">
+  <h2>徒步专项 <small>TREK</small></h2>
+  <div class="tbl"><table>
+    <thead><tr><th>路线</th><th>天数</th><th>最高海拔</th><th>难度</th><th>适合</th></tr></thead>
+    <tbody>
+      <tr><td><b>Poon Hill 加 ABC（本行程）</b></td><td class="num">11</td><td class="num">4130 m</td><td>中等，已按体能拆分</td><td>每天爬升 ≤700 米、距离 ≤15 公里，轻装</td></tr>
+      <tr><td>ABC 安纳普尔纳大本营</td><td class="num">8–10</td><td class="num">4130 m</td><td>中等</td><td>第一次长线，想站在雪山环抱里</td></tr>
+      <tr><td>Mardi Himal</td><td class="num">5–6</td><td class="num">4500 m 观景点</td><td>中等</td><td>想人少，时间紧</td></tr>
+      <tr><td>Poon Hill</td><td class="num">4–5</td><td class="num">3210 m</td><td>容易</td><td>体能一般，先试水</td></tr>
+      <tr><td>Khopra Ridge</td><td class="num">6–8</td><td class="num">3660 m</td><td>中等</td><td>住社区小屋，非常清静</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <h3>本行程：按你的体能拆成 11 天</h3>
+  <p>标准：<b>每天爬升不超过 700 米，距离不超过 15 公里，轻装</b>。数字是大概值，实际以向导现场判断为准。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>天</th><th>路段</th><th>睡觉海拔</th><th>爬升</th><th>距离</th><th>用时</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Ulleri → Nangethanti</td><td class="num">2430 m</td><td class="num">450 m</td><td class="num">5 km</td><td class="num">3 h</td></tr>
+      <tr><td class="num">2</td><td>Nangethanti → Ghorepani</td><td class="num">2860 m</td><td class="num">430 m</td><td class="num">4 km</td><td class="num">2–3 h</td></tr>
+      <tr><td class="num">3</td><td>Poon Hill 日出 → Tadapani</td><td class="num">2630 m</td><td class="num">600 m</td><td class="num">12 km</td><td class="num">6–7 h</td></tr>
+      <tr><td class="num">4</td><td>Tadapani → 琼弄</td><td class="num">2170 m</td><td class="num">450 m</td><td class="num">10 km</td><td class="num">5–6 h</td></tr>
+      <tr><td class="num">5</td><td>琼弄 → 竹林</td><td class="num">2310 m</td><td class="num">650 m</td><td class="num">9 km</td><td class="num">5–6 h</td></tr>
+      <tr><td class="num">6</td><td>竹林 → Himalaya</td><td class="num">2920 m</td><td class="num">610 m</td><td class="num">6 km</td><td class="num">4 h</td></tr>
+      <tr><td class="num">7</td><td>Himalaya → 德拉利</td><td class="num">3230 m</td><td class="num">410 m</td><td class="num">4 km</td><td class="num">2 h</td></tr>
+      <tr><td class="num">8</td><td>德拉利 → 鱼尾峰大本营</td><td class="num">3700 m</td><td class="num">470 m</td><td class="num">4 km</td><td class="num">3 h</td></tr>
+      <tr><td class="num">9</td><td>ABC 日出 → Dovan</td><td class="num">2600 m</td><td class="num">430 m</td><td class="num">14 km</td><td class="num">8 h</td></tr>
+      <tr><td class="num">10</td><td>Dovan → 琼弄</td><td class="num">2170 m</td><td class="num">550 m</td><td class="num">10 km</td><td class="num">5–6 h</td></tr>
+      <tr><td class="num">11</td><td>琼弄 → 吉努温泉 → 公路</td><td>回博卡拉</td><td class="num">约 50 m</td><td class="num">6 km</td><td class="num">3 h</td></tr>
+    </tbody>
+  </table></div>
+  <p>第 9 天下降约 1500 米，是全程最累的一天，下坡很伤膝盖。走不动就在 Himalaya 或竹林提前住下，后面的日子顺延一天就行。</p>
+
+  <h3>轻装：请背夫，自己只背 5 公斤</h3>
+  <ul class="clean">
+    <li><b>背夫</b>：每天约 20–25 美元，11 天约 1500–1800 元。大包不超过 12 公斤。也可以请“背夫向导”，一个人既带路又背包，更便宜，但女生独行更推荐向导和背夫分开请，或者找 3 Sisters 这类女性向导公司一起安排。</li>
+    <li><b>你自己的小包，20 升左右，5 公斤以内</b>：1.5 升水、雨衣或冲锋衣、抓绒、零食、头灯、防晒霜、墨镜、常用药、手机、充电宝、护照和许可证、现金。</li>
+    <li><b>交给背夫的大包</b>：睡袋、羽绒服、换洗衣物 2 套、洗漱用品、拖鞋。茶屋能洗衣服，衣服带少点。</li>
+    <li><b>两根登山杖</b>：省力也护膝，下坡一定要用。</li>
+    <li>城里用不上的行李寄存在博卡拉的客栈，一般免费。</li>
+  </ul>
+
+
+  <h3>出发前的路况检查和备用方案</h3>
+  <ul class="clean">
+    <li><b>出发前一周</b>：看 ACAP（安纳普尔纳保护区项目）和尼泊尔旅游局的公告，再问博卡拉的向导公司，确认路线开放、Ghorepani 一段没受滑坡影响。</li>
+    <li><b>徒步前 3 天</b>：看尼泊尔水文气象局的预警。预报有暴雪或大雨，就推迟出发。</li>
+    <li><b>机动日</b>：下山后第 24 天（11 月 25 日）是恢复日，也是机动日，后面 4 天皮划艇营也可以往后挪。徒步最多可以推迟 3 天，不影响后面的行程。</li>
+    <li><b>半路下大雪</b>：Himalaya 到鱼尾峰大本营之间是雪崩风险路段，向导说不走就不走，原地等或者直接下撤。</li>
+    <li><b>ABC 临时关闭时的备用路线</b>：只走 Poon Hill 环线（4–5 天，最高 3210 米），再加 Australian Camp 山脊徒步，都低海拔，受暴雪影响小。</li>
+  </ul>
+
+  <h3>许可和向导</h3>
+  <ul class="clean">
+    <li><b>ACAP 保护区许可</b>：约 3000 卢比，在博卡拉或加德满都旅游局办，带护照和照片。</li>
+    <li><b>向导强制</b>：从 2023 年起，外国人在安纳普尔纳等大部分地区徒步必须请持证向导。向导每天约 25–35 美元，背夫约 20–25 美元。找人拼团可以分摊。</li>
+    <li>许可证相关规定变得比较频繁，办之前以尼泊尔旅游局最新公告为准。</li>
+  </ul>
+
+  <h3>山里每天花多少</h3>
+  <p>茶屋住宿很便宜，有的只要吃饭就免房费。主要开销是吃饭和热水、充电、Wi-Fi，越往高处越贵。按每天 <span class="num">200–300</span> 元准备（不含向导）。</p>
+
+  <h3>装备（大部分在 Thamel 租）</h3>
+  <ul class="clean">
+    <li>自己带：磨合过的徒步鞋、速干衣、抓绒、头灯、水瓶、净水片、防晒、个人药品。</li>
+    <li>可以租：羽绒服、睡袋（零下 10 度级别）、登山杖。每样每天几块到十几块人民币。</li>
+  </ul>
+
+  <div class="note"><b>高原反应：</b>海拔 3000 米以上，每天睡觉的高度上升不超过 500 米；不喝酒；头疼、恶心、走不稳就停下或者往下撤，不硬撑。乙酰唑胺（Diamox）出发前问医生能不能吃、怎么吃。</div>
+</section>
+
+<!-- 学习 -->
+<section id="learn">
+  <h2>学习计划 <small>LEARN</small></h2>
+  <p class="sub">两条线并行：当地的课，加上你自己每天的主线。</p>
+
+  <h3>当地能学的东西</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>学什么</th><th>在哪</th><th>多久</th><th>大约费用</th></tr></thead>
+    <tbody>
+      <tr><td>佛学</td><td>Kopan 寺短期课程</td><td>约 7 天</td><td class="num">约 1000–2000 元，含食宿，以寺院报价为准</td></tr>
+      <tr><td>冥想</td><td>Dhamma Shringa 内观中心</td><td>10 天</td><td>免费，随喜捐款</td></tr>
+      <tr><td>内观禅修</td><td>Dhamma Shringa</td><td>10 天</td><td>免费，随喜捐款</td></tr>
+      <tr><td>陶艺拉坯</td><td>巴克塔普尔陶器广场</td><td>半天起</td><td class="num">50–100 元</td></tr>
+      <tr><td>唐卡绘画</td><td>巴克塔普尔、帕坦画坊</td><td>几天到几周</td><td>按天议价</td></tr>
+      <tr><td>纽瓦尔菜</td><td>潘瑙蒂民宿</td><td>住宿期间</td><td>通常含在民宿里</td></tr>
+      <tr><td>米提拉画</td><td>贾纳克布尔</td><td>2–4 天</td><td>当面问</td></tr>
+      <tr><td>Dhaka 织布</td><td>坦森作坊</td><td>半天到 1 天</td><td>当面问</td></tr>
+      <tr><td>瑜伽</td><td>博卡拉湖边</td><td>单节或一周</td><td class="num">单节 50–100 元</td></tr>
+      <tr><td>尼泊尔菜课</td><td>博卡拉、加德满都</td><td>半天</td><td class="num">约 150 元</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>三条自己的主线</h3>
+  <div class="grid2">
+    <div class="card"><h4>英语口语</h4><p>尼泊尔从青旅老板到向导都说英语，每天找一个人认真聊 20 分钟。每周录一段 3 分钟的英语自我介绍，三个月后放在一起对比。</p></div>
+    <div class="card"><h4>内容作品集</h4><p>每周发一篇游记或一条短视频。小众城镇的中文内容很少，容易出彩。回国找内容、运营、市场相关工作时，可以直接把这些拿出来。</p></div>
+    <div class="card"><h4>一项硬技能</h4><p>从 AI 工具、数据分析、剪辑里选一个，每天学 1 小时，第 2 个月禅修期间暂停。每个月做出一个能展示的小成果。</p></div>
+  </div>
+</section>
+
+<!-- 报班 -->
+<section id="classes">
+  <h2>报班项目 <small>CLASSES</small></h2>
+  <p class="sub">英语、网球、健身之外，还加了几项尼泊尔特有的课。价格是估算，各家差别很大，到了当面问，先上一节体验课再决定买不买套餐。</p>
+
+  <h3>英语</h3>
+  <div class="grid2">
+    <div class="card"><h4>线上一对一外教</h4><div class="en">全程 · 每周 3 次</div>
+      <p>在 italki、Preply 这类平台约母语外教，每次 30–60 分钟，可以从你的真实经历练起：怎么用英语讲离职、讲尼泊尔见闻、模拟面试。</p>
+      <dl><dt>费用</dt><dd>每小时约 60–200 元，看老师资历</dd><dt>建议</dt><dd>固定每周一、三、五早上上课；徒步和闭关期间暂停</dd></dl></div>
+    <div class="card"><h4>当地雅思或口语班</h4><div class="en">加德满都 · 博卡拉</div>
+      <p>加德满都 Putalisadak 一带、博卡拉市区有大量给本地人上的雅思、PTE 培训班，价格很低。适合想考雅思、或者想要固定节奏上课的人。</p>
+      <dl><dt>费用</dt><dd>每月约 400–800 元</dd><dt>注意</dt><dd>老师多是尼泊尔人，口音偏南亚，语法和应试扎实，口语地道度一般</dd></dl></div>
+    <div class="card"><h4>免费练口语</h4><div class="en">全程</div>
+      <p>青旅的公共区、徒步路上的茶屋、Kopan 的讨论小组，都是现成的英语环境。给自己定个规矩：每天跟一个外国人认真聊 20 分钟。</p>
+      <dl><dt>费用</dt><dd>免费</dd><dt>建议</dt><dd>每周录一段 3 分钟英语独白，三个月后放在一起对比</dd></dl></div>
+  </div>
+
+  <h3>加德满都英语机构评价对比</h3>
+  <p class="sub">只看“听力和口语私教”的质量。Google 评价是 2026 年 10 月底逐条读完的（ALC 129 条、RTC 166 条、English For All 117 条、Bishwo Bhasa 178 条、Shalom 657 条、KTM Language Academy 28 条、Grace 18 条、Zenith 6 条，Language Hub 读了 320 条），再加上小红书上几篇详细的亲历帖。价格是网友在不同时间拿到的报价，以当面报价为准。</p>
+  <div class="tbl"><table class="eng">
+    <thead><tr><th>机构</th><th>Google 评分</th><th>近两年的好评</th><th>差评集中在</th><th>老师</th><th>私教价（网友报价）</th><th>结论</th></tr></thead>
+    <tbody>
+      <tr><td><b>ALC</b><br>American Language Center<br><span class="progress">Naxal · +977 981-8154416</span></td><td class="num">4.4（129）<br>五星 102 · 一星 13</td><td>Danny 老师的会话课、沟通课被多次点名，有中国学员说一个月从不开口到能比较流利地沟通；可以选母语老师或尼泊尔老师；小红书上有人跟美国私教 George 上了 4 个多月，进步明显，老师常免费拖堂</td><td>一星大多是 3–8 年前的托福、SAT 考试班（要求预付全款、不让试听）；有人中途换了老师，换成略有口音的印度老师，口语进步慢；2 个月前有一批只写一两句的五星，参考价值低</td><td>本地 + 欧美</td><td class="num">2000 卢比/小时<br>最少 10 节</td><td><b>首选</b>。指定母语外教，或点名 Danny、George</td></tr>
+      <tr><td><b>Grace</b><br>Grace Language Institute<br><span class="progress">Keshar Mahal Marg · +977 982-3519781</span></td><td class="num">4.6（18）<br>五星 16 · 一星 2</td><td>4 条中国学员的详细好评都提到老师口音不重、会备课、有教材；有人专门被教会分清 13 和 30 这类听力难点；老师会为学生加课；小红书上有人说它的班课质量最好</td><td>1 年前有人说一位雅思私教课枯燥、没技巧；2 个月前有人说基础差别去、比别家贵；有人测完试就没了回音</td><td>尼泊尔本地</td><td class="num">850–1500 卢比/小时<br>没有最低课时</td><td><b>次选</b>。适合系统打基础、专门练听力；不是母语口音，评价也少</td></tr>
+      <tr><td><b>English For All</b><br>现在也叫 KTM<br><span class="progress">Lainchaur · +977 980-1074160</span></td><td class="num">4.5（117）<br>五星 97 · 一星 9</td><td>大部分五星是 5–10 年前夸外教 Kevin、Susan 的雅思课；近一年的中国学员好评集中在 Leon 老师（多次点名），也有人推荐 Bhaskar 老师的一对一</td><td>小红书 2025 年 12 月有详细避雷帖：英国老师的私教课不备课、迟到、频繁离开教室、在课上处理网购退货，评论区多人附和；Google 上的差评多是 6 年以前的</td><td>本地 + 英国</td><td class="num">打包约 890 卢比/小时<br>到 2000 卢比/小时</td><td><b>谨慎</b>。私教要避开那位英国老师，只考虑 Leon、Bhaskar；先花 500 卢比试一节，不预付大额</td></tr>
+      <tr><td><b>RTC English</b><br><span class="progress">Lainchaur · +977 1-4516412</span></td><td class="num">4.3（166）<br>五星 112 · 一星 18</td><td>好评多是几年前的雅思课；一位中国学员说它最有名、最专业，美国老师没有口音</td><td>近一年差评变多：老师懒散、没有电脑模考、没有口语模考、“浪费 12000 卢比”；美国老师语速快，分级偏高；试听要 750 卢比；教室用木板隔开，不隔音；以前还有前台态度差、资料难领</td><td>本地 + 欧美</td><td class="num">2200 卢比/小时</td><td><b>不推荐</b>做听说私教，它主要是雅思班</td></tr>
+      <tr><td><b>KTM Language Academy</b><br><span class="progress">Lazimpat Nursery Rd · +977 976-7246877</span></td><td class="num">5.0（28）<br>全部五星</td><td>近一个月有几条中国学员的具体好评：校长是英国人、发音纯正；一对一的 Binit 老师专业，不走应试路线；小班不到 20 元一节，一对一 40 多元一节；中国学员约占 85%</td><td>没有差评，但 5 个月前集中出现一批只写一句、都带商家回复的五星，参考价值低；小红书说 English For All 改名叫 KTM，“英国校长”的描述也对得上，那篇私教避雷帖很可能说的是同一位老师</td><td>本地 + 英国</td><td class="num">一对一约 40 多元/节</td><td><b>谨慎</b>。可以试 Binit 老师的一对一；不要找英国校长上私教</td></tr>
+      <tr><td><b>Zenith Language Center</b><br><span class="progress">Siddhidas Marg，Thamel 南边 · +977 984-1247594</span></td><td class="num">4.7（6）</td><td>1 年前两条中国学员好评：性价比高；老师仔细，一个月后能听懂、会说了</td><td>评价太少，没有差评，也没有更多信息</td><td>不清楚</td><td class="num">没打听到</td><td><b>信息不足</b>。顺路可以去问问、试一节</td></tr>
+      <tr><td><b>Bishwo Bhasa Campus</b><br>特里布万大学国际语言学院<br><span class="progress">Exhibition Road</span></td><td class="num">4.0（178）<br>五星 89 · 一星 23</td><td>公立学院，学费很便宜（一学期约 3000 卢比）；外国人在这里学尼泊尔语的评价不错</td><td>按学期上课，一年只在 11 月、5 月开学两次；外国人报名流程长，临近开课报名要多交 100 美元；教室陈旧；行政效率低、退费难；近期还有人说德语老师常迟到</td><td>尼泊尔本地</td><td class="num">没有私教</td><td><b>不适合</b>你的短期听说私教；想正经学尼泊尔语可以考虑</td></tr>
+      <tr><td><b>Shalom Language Institute</b><br><span class="progress">美国大使馆对面 · +977 984-3594243</span></td><td class="num">5.0（657）<br>五星 649</td><td>基本是老板 Prakash 老师一个人教，本地学员说他耐心负责</td><td>大量评价是同一个模板（“我是某某，跟 Prakash 老师学英语”），181 位评价人只写过这一条评价，像是集中邀请来的好评；学员几乎都是本地人</td><td>尼泊尔本地</td><td class="num">没打听到</td><td><b>不推荐</b>，评分可信度低</td></tr>
+      <tr><td><b>Language Hub</b><br><span class="progress">Thamel 商场 3 楼</span></td><td class="num">4.8（524）</td><td>高分主要来自本地人学法语、德语、汉语的评价，英语课的评价很少</td><td>近一年的一星：前台态度差、报价前后不一、老师迟到或取消课；小红书也说前台冷淡、不能退款</td><td>本地</td><td class="num">没打听到</td><td><b>不适合</b></td></tr>
+      <tr><td><b>华洋</b><br>Hua Yang</td><td class="num">Google 上没有评价</td><td colspan="2">小红书：中国人开的，中英双语教学，学生几乎全是中国人，一个班十几人，几乎没有发言机会，还会推销多报班</td><td>本地</td><td class="num">约 800 元/月</td><td><b>不适合</b>练口语</td></tr>
+      <tr><td><b>CWEC、CLC</b></td><td class="num">Google 地图上查不到</td><td colspan="2">小红书：CWEC 是 5 人小班，但都是中国人；CLC 是中国老板开的，偏雅思、PTE 考试，有人说老师上课玩手机</td><td>本地</td><td class="num">CLC 3000 卢比/小时</td><td><b>不适合</b></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>怎么选：</b>先去 ALC 试一节，指定母语外教或 Danny；再去 Grace 试一节。用这 5 点比较：你说得比老师多；老师当场纠正你的发音和表达；老师正常语速你能听懂七八成；第一节课就问你的目标；布置带音频的听力作业。只买最小的课时包，满意再续。</div>
+
+  <h3>网球</h3>
+  <div class="grid2">
+    <div class="card"><h4>加德满都</h4><div class="en">第 1 周 · 第 2 个月结束后</div>
+      <p>尼泊尔打网球的人不多，球场主要在大酒店和体育俱乐部里，比如一些五星酒店的运动中心，可以单买场地费、请陪练教练。到了以后问住处前台，或者在当地网球群里打听。</p>
+      <dl><dt>费用</dt><dd>场地每小时约 50–100 元，教练每小时约 50–100 元</dd><dt>建议</dt><dd>早上 7–9 点打，温度最舒服</dd></dl></div>
+    <div class="card"><h4>博卡拉</h4><div class="en">第 3 个月收尾周</div>
+      <p>湖边几家度假酒店有网球场，非住客可以付费使用。可以买 5–10 节课的教练套餐，集中练一个技术点，比如反手或者发球。</p>
+      <dl><dt>费用</dt><dd>跟加德满都差不多，套餐有折扣</dd><dt>带什么</dt><dd>自己的球拍和球鞋，当地很难买到合适的</dd></dl></div>
+  </div>
+
+  <h3>健身</h3>
+  <div class="grid2">
+    <div class="card"><h4>健身房</h4><div class="en">加德满都 · 博卡拉</div>
+      <p>Thamel、Jhamsikhel、博卡拉湖边都有设备不错的健身房，很多支持单次或按周买卡。徒步前两周练腿和核心，下山后用来恢复。</p>
+      <dl><dt>费用</dt><dd>单次约 15–40 元，月卡约 150–300 元</dd><dt>建议</dt><dd>在城里的日子每周练 3 次</dd></dl></div>
+    <div class="card"><h4>攀岩</h4><div class="en">加德满都 · 纳加阔特</div>
+      <p>Thamel 附近有室内攀岩墙，有教练带新手；加德满都北边的 Nagarjun 森林和纳加阔特一带有户外岩场，可以报一日课程。</p>
+      <dl><dt>费用</dt><dd>岩墙单次约 30–50 元，户外一日课约 300–500 元</dd></dl></div>
+    <div class="card"><h4>瑜伽长课</h4><div class="en">博卡拉 · 可替换方案</div>
+      <p>博卡拉有很多 200 小时瑜伽教练培训（TTC），一般 3–4 周，包食宿，结业有证书。想深入学瑜伽，可以用它替换 Kopan 课程。</p>
+      <dl><dt>费用</dt><dd>约 8000–14000 元，含食宿</dd></dl></div>
+  </div>
+
+  <h3>尼泊尔特色课</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>项目</th><th>在哪</th><th>多久</th><th>大约费用</th><th>说明</th></tr></thead>
+    <tbody>
+      <tr><td>滑翔伞</td><td>博卡拉</td><td>体验 30 分钟；执照课 7–10 天</td><td class="num">体验约 600–800 元；执照课约 7000 元起</td><td>博卡拉是世界级的滑翔伞地点，先飞一次双人体验再决定学不学</td></tr>
+      <tr><td>皮划艇</td><td>博卡拉、Seti 河</td><td>3–4 天入门营</td><td class="num">约 2000–3000 元</td><td>先在费瓦湖练翻滚自救，再下河。11 月水温还能接受</td></tr>
+      <tr><td>尼泊尔语</td><td>加德满都语言学校或线上</td><td>每周几节</td><td class="num">每节约 50–100 元</td><td>学会日常对话，小城镇体验会好很多</td></tr>
+      <tr><td>摄影</td><td>加德满都、博卡拉</td><td>半天到 1 天</td><td class="num">约 300–600 元</td><td>当地摄影师带着拍古城或雪山，对做内容作品集有帮助</td></tr>
+      <tr><td>唐卡绘画</td><td>巴克塔普尔、帕坦</td><td>几天到几周</td><td>按天议价</td><td>能学基础线描，想深入可以长住学</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>放进行程里</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>时间</th><th>报什么</th><th>怎么安排</th></tr></thead>
+    <tbody>
+      <tr><td>全程</td><td>线上英语外教</td><td>在城里的晚上 20:30 一节，徒步和禅修期间停</td></tr>
+      <tr><td class="num">第 2–8 天</td><td>网球、攀岩、健身、陶艺、唐卡</td><td>加德满都谷地，每天一项</td></tr>
+      <tr><td class="num">第 11 天</td><td>滑翔伞</td><td>到博卡拉当天中午飞</td></tr>
+      <tr><td class="num">第 25–29 天</td><td>皮划艇入门营、瑜伽、做饭课</td><td>徒步下山后的博卡拉</td></tr>
+      <tr><td class="num">第 32、41–42 天</td><td>Dhaka 织布、米提拉画</td><td>坦森和贾纳克布尔</td></tr>
+      <tr><td class="num">第 45–49 天</td><td>网球、尼泊尔语、攀岩、唐卡</td><td>帕坦学习营第一周</td></tr>
+      <tr><td class="num">第 50–61 天</td><td>十日内观</td><td>不报其他课</td></tr>
+      <tr><td class="num">第 68–74 天</td><td>Kopan 短期课程</td><td>不报其他课</td></tr>
+      <tr><td class="num">第 76–89 天</td><td>木雕、唐卡密集课、户外攀岩、网球、求职</td><td>帕坦学习营第二段</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>还想再多报：</b>谷地学习期在帕坦按月租房，一个月约 1500–2500 元。英语、网球、健身、尼泊尔语每周排满，课程全报下来每月大约 2000–4000 元。</div>
+</section>
+
+<!-- 饮食 -->
+<section id="food">
+  <h2>饮食 <small>FOOD</small></h2>
+  <p class="sub">口味对中国胃很友好：米饭、咖喱、饺子、面条，辣度适中。加德满都和博卡拉还有不少中餐馆，想家了能吃上川菜和火锅。</p>
+
+  <h3>一定要吃的</h3>
+  <div class="grid2">
+    <div class="card"><h4>Dal Bhat 豆汤饭</h4><div class="en">全国 · 每天都能吃</div><p>米饭、扁豆汤、咖喱菜、腌菜，一大盘。大多数地方<b>免费续饭续汤</b>。徒步时吃它最稳，当地人说 "Dal bhat power, 24 hour"。</p></div>
+    <div class="card"><h4>Momo 馍馍</h4><div class="en">全国</div><p>尼泊尔饺子，蒸的、炸的、泡汤的都有，蘸番茄芝麻酱。馅有鸡肉、水牛肉、蔬菜。</p></div>
+    <div class="card"><h4>纽瓦尔菜</h4><div class="en">潘瑙蒂、巴克塔普尔、帕坦</div><p>Samay Baji 拼盘（打扁米、腌肉、豆子）、Bara 豆饼、Chatamari 米饼。巴克塔普尔的 <b>Juju Dhau</b> 王者酸奶一定要尝。</p></div>
+    <div class="card"><h4>Thakali 套餐</h4><div class="en">博卡拉</div><p>豆汤饭的升级版，菜更多、更精致，配荞麦饼和酥油。博卡拉有好几家专门店。</p></div>
+    <div class="card"><h4>藏餐</h4><div class="en">Kopan、博达哈、徒步路上</div><p>Thukpa 藏面、藏式面包配蜂蜜、酥油茶。天冷的时候一碗热面最舒服。</p></div>
+    <div class="card"><h4>平原小吃</h4><div class="en">贾纳克布尔、奇特旺、蓝毗尼</div><p>口味接近北印度：咖喱、烤饼、Lassi 酸奶饮、甜点 Jalebi。街边的 Chiya 奶茶几块钱一杯。</p></div>
+  </div>
+
+  <h3>吃得干净</h3>
+  <ul class="clean">
+    <li>只喝瓶装水、过滤水或烧开的水，<b>不加冰块</b>，刷牙也用干净水。</li>
+    <li>头两周少吃生菜沙拉和没削皮的水果，现炒现煮的热菜最安全。</li>
+    <li>挑人多、翻台快的店，本地人排队的路边摊一般也没问题。</li>
+    <li><b>徒步时吃素</b>：山上的肉是几天前背上去的，没有冷藏，吃豆汤饭和蔬菜更稳。</li>
+    <li>吃素很容易，几乎每家都有素食选项。不吃牛肉也不用担心，尼泊尔印度教徒不吃牛，"buff" 指的是水牛肉。</li>
+  </ul>
+
+  <h3>价格参考</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>东西</th><th>卢比</th><th>约合人民币</th></tr></thead>
+    <tbody>
+      <tr><td>本地小馆豆汤饭（可续）</td><td class="num">200–400</td><td class="num">10–20</td></tr>
+      <tr><td>游客餐厅豆汤饭或西餐</td><td class="num">500–900</td><td class="num">25–45</td></tr>
+      <tr><td>一盘 momo（10 个）</td><td class="num">150–300</td><td class="num">8–15</td></tr>
+      <tr><td>奶茶 Chiya</td><td class="num">30–60</td><td class="num">2–3</td></tr>
+      <tr><td>博卡拉咖啡馆一杯拿铁</td><td class="num">200–350</td><td class="num">10–18</td></tr>
+      <tr><td>1 升瓶装水（城里 / 山上）</td><td class="num">30 / 100–300</td><td class="num">1.5 / 5–15</td></tr>
+      <tr><td>中餐馆一顿</td><td class="num">800–1500</td><td class="num">40–80</td></tr>
+      <tr><td>一瓶本地啤酒</td><td class="num">500–700</td><td class="num">25–35</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 预算 -->
+<section id="budget">
+  <h2>费用 <small>BUDGET</small></h2>
+  <h3>每天大概花多少</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>在哪</th><th>住</th><th>吃</th><th>一天合计</th></tr></thead>
+    <tbody>
+      <tr><td>加德满都、博卡拉</td><td class="num">单间 80–150 元，宿舍 30–50 元</td><td class="num">50–100 元</td><td class="num">150–250 元</td></tr>
+      <tr><td>小镇民宿</td><td class="num">含两餐 150–250 元</td><td class="num">午饭 20 元</td><td class="num">170–270 元</td></tr>
+      <tr><td>徒步（不含向导）</td><td class="num">茶屋 0–50 元</td><td class="num">150–250 元</td><td class="num">200–300 元</td></tr>
+      <tr><td>Kopan 课程期间</td><td colspan="2">课程费已含食宿</td><td class="num">几乎不额外花钱</td></tr>
+      <tr><td>平原地区</td><td class="num">80–150 元</td><td class="num">40–80 元</td><td class="num">130–230 元</td></tr>
+      <tr><td>博卡拉月租</td><td class="num">每月 1000–1500 元</td><td class="num">自己做饭能更省</td><td class="num">每天约 100 元</td></tr>
+    </tbody>
+  </table></div>
+  <h3>三个月总账</h3>
+  <p class="sub">单位人民币，按 1 元约兑 19 尼泊尔卢比估算。不含国际机票（往返通常 2000–3500 元）。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>项目</th><th>说明</th><th>省着花</th><th>舒服些</th></tr></thead>
+    <tbody>
+      <tr><td>住宿</td><td>约 62 晚，不含禅修和徒步期间</td><td class="num">5,000</td><td class="num">9,000</td></tr>
+      <tr><td>吃饭</td><td>本地饭为主，偶尔吃西餐</td><td class="num">3,500</td><td class="num">5,500</td></tr>
+      <tr><td>徒步</td><td>11 天：许可、向导、背夫、茶屋、装备租赁</td><td class="num">5,500</td><td class="num">7,500</td></tr>
+      <tr><td>Kopan 短课加内观捐款</td><td>Kopan 7 天课程含食宿，内观随喜</td><td class="num">1,500</td><td class="num">3,000</td></tr>
+      <tr><td>境内交通</td><td>大巴为主，省着花不坐飞机</td><td class="num">1,200</td><td class="num">2,500</td></tr>
+      <tr><td>课程和体验</td><td>手艺课、瑜伽、国家公园</td><td class="num">1,000</td><td class="num">2,000</td></tr>
+      <tr><td>报班和特训</td><td>滑翔伞、皮划艇营、网球、健身、攀岩、英语外教</td><td class="num">4,500</td><td class="num">6,500</td></tr>
+      <tr><td>保险</td><td>含高海拔和直升机救援，90 天</td><td class="num">800</td><td class="num">1,500</td></tr>
+      <tr><td>电话卡和杂费</td><td>流量、洗衣、药品、小费</td><td class="num">800</td><td class="num">1,200</td></tr>
+    </tbody>
+    <tfoot><tr><td>合计</td><td></td><td class="num">23,800</td><td class="num">38,700</td></tr></tfoot>
+  </table></div>
+  <div class="note"><b>还能再省：</b>把 Kopan 换成免费的 10 日内观，再在博卡拉做 2–3 周 Workaway 换宿，总花费可以压到 1.5 万元左右。</div>
+</section>
+
+<!-- 交通 -->
+<section id="move">
+  <h2>公共交通 <small>TRANSPORT</small></h2>
+  <p class="sub">按环线顺序，一段一段写清楚在哪上车、坐多久、多少钱。票价是大概值，出发前一天再跟住处确认。</p>
+
+  <h3>女生一个人坐车的规矩</h3>
+  <ul class="clean">
+    <li><b>只坐白天的车</b>，天黑前到。尼泊尔夜车事故多，这一条不打折扣。</li>
+    <li><b>长途优先旅游大巴</b>，比公交大巴安全准时；没有旅游大巴的路段坐公交大巴，或者让住处帮你包车。</li>
+    <li>本地公交前排有<b>女士专座</b>，上车直接坐那里。长途选靠前、靠过道的座位，旁边尽量是女乘客。</li>
+    <li>大包放行李舱，小包（证件、钱、手机）一直放腿上。</li>
+    <li><b>包车</b>只用住处推荐的司机，上车前把车牌拍下来发给家人，开着位置共享。</li>
+    <li>市内打车用 <b>Pathao</b> 或 <b>inDrive</b>，选汽车（Car），晚上别坐摩托。有行程记录，价格透明。</li>
+    <li>每到一站给家里发一句“到了”。</li>
+  </ul>
+
+  <h3>逐段怎么走</h3>
+  <div class="tbl"><table class="tr">
+    <thead><tr><th>路段</th><th>推荐方式</th><th>在哪上车，怎么坐</th><th>时长</th><th>大约票价</th></tr></thead>
+    <tbody>
+      <tr><td>机场 → 住处</td><td>客栈接机</td><td>晚上落地，订房时加订接机。备选是在到达大厅连 Wi-Fi 叫 inDrive，正常约 500 卢比；机场门口的司机会要 1200 卢比，别在门外打车</td><td class="num">30 分钟</td><td class="num">接机 45–55 元；inDrive 约 26 元</td></tr>
+      <tr><td>加德满都 ⇄ 潘瑙蒂（一日游）</td><td>直达公交或打车</td><td>Bir Hospital 车站（Ratna Park 旁）有直达大巴，终点 Panauti Bus Park，下车走 15 分钟进老镇；回程从同一个车站坐，<b>18:00 前</b>坐上，晚了要去 Banepa 转车。带行李箱就打车</td><td class="num">1.5 小时</td><td class="num">公交 70 卢比（约 4 元）；打车约 150 元</td></tr>
+      <tr><td>加德满都 → 纳加阔特</td><td>打车</td><td>Thamel 打车直达，谈好总价，送到客栈门口，到了再付钱</td><td class="num">约 1.5 小时</td><td class="num">1500–2000 卢比（约 80–105 元）</td></tr>
+      <tr><td>纳加阔特 → 昌古纳拉扬 → 巴克塔普尔</td><td>徒步加打车</td><td>沿山脊走到昌古纳拉扬神庙，再打车到巴克塔普尔古城入口</td><td class="num">徒步 3–4 小时，车 15–20 分钟</td><td class="num">约 30 元</td></tr>
+      <tr><td>（参考）巴克塔普尔出发的公交</td><td>公交</td><td>去纳加阔特的大巴 75 卢比，但只停在山下，离观景台还有 4–5 公里，现场叫车常被临时加价。去潘瑙蒂：在 Suryabinayak 车站坐往 Banepa 的车（20 卢比，30 分钟），再在 Banepa Bus Park 换去潘瑙蒂的车（20 卢比，20 分钟）。回加德满都约 35 卢比</td><td class="num">约 1 小时</td><td class="num">每段 20–75 卢比</td></tr>
+            <tr><td>① 巴克塔普尔 → 班迪普尔</td><td>旅游大巴加缆车</td><td>05:45 让客栈约好的出租车送你 40 分钟到 Kantipath 旅游大巴站（Thamel 旁边），07:00 坐往博卡拉的旅游大巴，在 <b>Bandipur Cable Car Lower Station</b> 下车，快到时提醒售票员；门卫叫免费摆渡车送到缆车口，坐缆车上山。也可以在 Dumre 下车坐吉普上山。Gongabu 新巴士站也有去 Dumre 的公交大巴（800 卢比），车况一般</td><td class="num">5–6 小时</td><td class="num">大巴 60–80 元；缆车单程 400 卢比</td></tr>
+      <tr><td>② 班迪普尔 → 博卡拉</td><td>缆车加路边公交</td><td>缆车约 10 点开，单程 400 卢比；到下站说去博卡拉，免费摆渡车送到公路路口，招手拦往博卡拉的公交大巴，谈好送到湖边。别理摆渡车司机介绍的中间人（开价 800 卢比一人）。或者坐吉普下 Dumre 再等车。不想等就让客栈叫车直送</td><td class="num">2.5–3 小时</td><td class="num">公交一人 300–400 卢比；包车 3000–4000 卢比</td></tr>
+      <tr><td>③ 博卡拉 → 登山口</td><td>吉普</td><td>向导安排，从 Baglung 巴士站出发</td><td class="num">2–3 小时</td><td class="num">跟向导分摊</td></tr>
+      <tr><td>④ 博卡拉 → 坦森</td><td>公交大巴或包车</td><td>Prithvi Chowk 博卡拉巴士总站，坐往 Butwal 的白天大巴，在坦森下车；有的车只停山下路口，再打车 10 分钟</td><td class="num">5–6 小时</td><td class="num">大巴约 35 元；包车 500–650 元</td></tr>
+      <tr><td>⑤ 坦森 → 蓝毗尼</td><td>两段大巴</td><td>坦森巴士站坐到 Butwal，换写着 Lumbini 的小巴或大巴；也可以包车直达</td><td class="num">3–4 小时</td><td class="num">约 25 元；包车约 300 元</td></tr>
+      <tr><td>⑥ 蓝毗尼 → 奇特旺</td><td>大巴</td><td>坐去 Sauraha 的直达车；没有直达就先到 Bhairahawa 或 Butwal，坐往 Narayangarh 的大巴，在 Tandi 下车再打车 10 分钟</td><td class="num">5–6 小时</td><td class="num">约 50 元</td></tr>
+      <tr><td>⑦ 奇特旺 → 贾纳克布尔</td><td>白天豪华大巴</td><td>打车到 Bharatpur 或 Narayangarh 巴士站，沿东西公路往东。小屋可以帮你订票</td><td class="num">6–7 小时</td><td class="num">约 60 元；包车约 800 元</td></tr>
+      <tr><td>⑧ 贾纳克布尔 → 加德满都</td><td>飞机</td><td>Buddha Air、Yeti、Shree 每天都有航班，订早班</td><td class="num">30 分钟</td><td class="num">600–900 元</td></tr>
+      <tr><td>谷地内：纳莫布达</td><td>大巴加徒步</td><td>Ratna Park 坐往 Dhulikhel 的大巴，从 Dhulikhel 走山路过去</td><td class="num">车 1.5 小时</td><td class="num">约 6 元</td></tr>
+      <tr><td>谷地内：帕平</td><td>包车一日</td><td>公交也有：Ratna Park 坐往 Pharping 的车</td><td class="num">1–1.5 小时</td><td class="num">包车约 250 元</td></tr>
+      <tr><td>谷地内：努瓦科特</td><td>包车</td><td>一个人建议包车；公交是 Machhapokhari 坐到 Bidur，再换吉普</td><td class="num">3 小时</td><td class="num">包车约 400 元</td></tr>
+    </tbody>
+  </table></div>
+
+
+  <h3>带行李箱方不方便</h3>
+  <p><b>不太方便。</b>这条路线上的古镇大多是砖路、土路和坡道：巴克塔普尔有坡，班迪普尔老街不让车进，潘瑙蒂是小巷；公交大巴很挤，行李常被塞在后排或绑在车顶；你要换十几次住处。</p>
+  <ul class="clean">
+    <li><b>最好的办法：前 5 晚住 Thamel，行李箱不用搬。</b>11 月 7 日上纳加阔特之前，把箱子寄存在这家客栈，之后只背双肩包；12 月 14 日回来再住几晚、取箱子。回来时住他家的话，寄存一般免费。</li>
+    <li><b>环线只背一个 40 升左右的双肩包，再加一个小包。</b>在 Thamel 买一个双肩包很便宜。衣服带够一周的，路上可以送洗。</li>
+    <li><b>徒步时</b>大包交给背夫，城里用不上的东西寄存在博卡拉的客栈。</li>
+    <li><b>一定要带箱子走的话</b>：选 20–24 寸、大轮子的；长途坐有行李舱的旅游大巴，别坐公交；在潘瑙蒂、纳加阔特、班迪普尔这几段打车或包车，让司机送到客栈门口；班迪普尔坐缆车上下山，比坐吉普好拿行李。</li>
+  </ul>
+
+  <h3>怎么订票</h3>
+  <ul class="clean">
+    <li><b>旅游大巴和长途大巴</b>：提前一天让住处帮订，或者在 bussewa.com 网上订，订好截图保存座位号。</li>
+    <li><b>国内航班</b>：在 Buddha Air、Yeti 官网订，或者让住处、旅行社代订。航班常因天气延误，跟后面的安排之间至少留半天。</li>
+    <li><b>包车</b>：让住处推荐司机，先谈好总价，说清楚含不含过路费和等待时间。</li>
+  </ul>
+</section>
+
+<!-- 安全健康 -->
+<section id="safe">
+  <h2>安全与健康 <small>SAFETY</small></h2>
+  <p class="sub">结论：这条路线总体安全。尼泊尔针对游客的暴力犯罪很少；行程最高 4130 米，不翻高山垭口，不去偏远禁区。真正的风险主要是交通、高反和野生动物，都有办法防。</p>
+
+  <h3>最新动态（截至 2026 年 10 月 12 日）</h3>
+  <div class="note"><b>结论：</b>你走的 Poon Hill 加 ABC 没查到损毁或关闭的报道，旅行社 10 月照常发团。但这一带 9 月底刚经历一场暴风雪，10 到 11 月偶尔还会有突发暴雪，出发前一定再确认。</div>
+  <ul class="clean">
+    <li><b>9 月 24–26 日</b>：暴雨暴雪，安纳普尔纳和马纳斯鲁保护区暂停发放徒步许可。马囊地区 Himlung 峰大本营发生雪崩，多人遇难和失踪；大环线一带山体滑坡，Thorong La 垭口 150 多名游客被劝返。安纳普尔纳村镇有人在滑坡中遇难，这一带一般说在 Poon Hill 所在的 Myagdi 地区，出发前问清 Ghorepani 一段有没有受影响。</li>
+    <li><b>10 月 1 日</b>：去马囊的公路仍未打通，去木斯塘的公路多处受损。</li>
+    <li><b>10 月 11 日</b>：马纳斯鲁线洪水冲毁 4 座桥，100 多名游客被困。</li>
+    <li><b>朗塘、Gosaikunda</b>：有旅行网站称目前关闭，热索瓦一带 8 月 26 日暴发过特大山洪，要避开。</li>
+    <li><b>去年先例</b>：2025 年 10 月底的暴风雪曾让 ABC 一带临时停止徒步。</li>
+    <li><b>政局</b>：2026 年 3 月提前大选后新政府上台，没查到 10 月有新的大规模抗议。</li>
+    <li><b>大使馆最新提醒</b>：有电诈团伙从柬埔寨等地转移到尼泊尔；远离赌博；入境时移民官索要小费应拒绝；在“中国领事”App 做海外公民登记。</li>
+  </ul>
+  <div class="tbl"><table>
+    <thead><tr><th>路线</th><th>状态</th></tr></thead>
+    <tbody>
+      <tr><td><b>Poon Hill 加 ABC（本行程）</b></td><td>没查到损毁或关闭，10 月照常发团</td></tr>
+      <tr><td>安纳普尔纳大环线、Thorong La</td><td>9 月底受灾，部分路段和公路损毁</td></tr>
+      <tr><td>马纳斯鲁</td><td>10 月 11 日洪水，桥梁被冲毁</td></tr>
+      <tr><td>朗塘、Gosaikunda、Tamang Heritage</td><td>据称关闭</td></tr>
+    </tbody>
+  </table></div>
+  <p class="progress">来源：CNN、FTN News、Review Nepal 等新闻和旅行网站，以及中国驻尼泊尔大使馆 2026 年 8–9 月的通知。部分信息来自旅行社博客，以官方公告为准。</p>
+
+  <h3>分段风险</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>路段</th><th>风险</th><th>主要注意</th></tr></thead>
+    <tbody>
+      <tr><td>加德满都、潘瑙蒂、班迪普尔</td><td>低</td><td>交通、流浪狗</td></tr>
+      <tr><td>ABC 徒步</td><td>中</td><td>高反、天气、大本营下方的雪崩路段，必须请向导</td></tr>
+      <tr><td>Kopan、纳莫布达、帕平</td><td>很低</td><td>基本没有</td></tr>
+      <tr><td>贾纳克布尔</td><td>低到中</td><td>罢工封路（bandh），冬季大雾，风气较保守</td></tr>
+      <tr><td>奇特旺、巴迪亚</td><td>中</td><td>犀牛、大象伤人，只跟持证向导进丛林</td></tr>
+      <tr><td>蓝毗尼、坦森、博卡拉</td><td>低</td><td>山路交通</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>五个主要风险和应对</h3>
+  <ul class="clean">
+    <li><b>交通事故，风险最大</b>：长途坐旅游大巴，<b>不坐夜车</b>；雨后、大雾天推迟出发；坐车尽量坐前排靠山一侧。</li>
+    <li><b>国内航班</b>：尼泊尔国内航空的安全记录一般，山区航线尤其要小心。能坐车就坐车，飞机只作备选。</li>
+    <li><b>高原反应</b>：按徒步一节的节奏上升，有症状就往下撤，向导说不走就不走。</li>
+    <li><b>野生动物</b>：在国家公园里不独自钻丛林，听向导指挥。</li>
+    <li><b>政治局势</b>：遇到集会、游行就绕开；平原地区碰上罢工，当天交通全停，就原地多住一天。</li>
+  </ul>
+  <p>另外两件事：尼泊尔在地震带上，每到一个住处先看一眼安全出口；在外交部“中国领事”App 登记行程，出事时使馆能找到你。</p>
+
+  <div class="grid2">
+    <div class="card"><h4>饮食</h4><p>不喝自来水，用净水片或买瓶装水，很多客栈有过滤水可以灌。头两周少吃生菜和路边沙拉。带上蒙脱石散和口服补液盐。</p></div>
+    <div class="card"><h4>狗和猴子</h4><p>流浪狗很多，晚上避开成群的狗。斯瓦扬布寺的猴子会抢东西。考虑出发前打狂犬疫苗，被咬或抓伤立刻冲洗并去医院。</p></div>
+    <div class="card"><h4>路上</h4><p>山路塌方和交通事故是最大的风险。不坐夜车，雨后山路出发前先问当地人路况。</p></div>
+    <div class="card"><h4>骗局</h4><p>"免费"带路、寺庙门口强行系红绳要钱、宣称"今天关门"的拉客，礼貌拒绝，直接走开。大使馆提醒有电诈团伙转移到尼泊尔：陌生人拉你“合作”“介绍工作”“带你赚钱”一律拒绝，也远离任何赌场。</p></div>
+  </div>
+  <h3>紧急电话</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>用途</th><th>号码</th></tr></thead>
+    <tbody>
+      <tr><td>尼泊尔旅游警察</td><td class="num">1144</td></tr>
+      <tr><td>尼泊尔警察</td><td class="num">100</td></tr>
+      <tr><td>中国外交部全球领事保护热线</td><td class="num">+86-10-12308</td></tr>
+      <tr><td>中国驻尼泊尔大使馆领事保护</td><td class="num">+977-1-4531511</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>出发前一周和旅途中：</b>以中国驻尼泊尔大使馆官网和“中国领事”App 的最新提醒为准。把大使馆电话存进手机，再写一张纸质卡片放在钱包里。</div>
+</section>
+
+<!-- 女生独行 -->
+<section id="solo">
+  <h2>女生独行 <small>SOLO</small></h2>
+  <p class="sub">每年都有很多女生独自去尼泊尔，徒步的也不少。整体可以放心，下面几处多留个心。</p>
+  <div class="grid2">
+    <div class="card"><h4>徒步向导：最关键</h4><p>要跟向导在山里单独待一周以上。<b>优先找女性向导</b>：博卡拉的 3 Sisters Adventure Trekking 专门培训女性向导，很多独行女生找他们。其他公司选口碑好的正规机构，不在街上随便找。跟向导保持专业距离，献殷勤的礼貌拒绝。</p></div>
+    <div class="card"><h4>平原地区更保守</h4><p>贾纳克布尔一带会被一直盯着看，偶尔有言语骚扰。穿长裤或长裙、遮住肩膀，天黑后不单独在外。不想应付就换成伊拉姆茶园，或者在博卡拉多住几天。</p></div>
+    <div class="card"><h4>住宿</h4><p>青旅选<b>女生宿舍</b>，或者评价里很多女生住过的客栈。潘瑙蒂、班迪普尔住当地人家里，安全感更好。Kopan 男女分开住。</p></div>
+    <div class="card"><h4>日常</h4><p>天黑打车用 Pathao 或 inDrive，有行程记录。饮料不离开视线，不喝陌生人递来的东西。按摩选正规店。被热情邀请去家里、去朋友的店，礼貌拒绝。</p></div>
+  </div>
+
+  <h3>跟家里约好的报平安机制</h3>
+  <ol class="clean" style="padding-left:1.4em">
+    <li>出发前把这份行程和每晚的住处发给一位家人或朋友，行程有变就更新。</li>
+    <li>每天晚上 9 点（北京时间约 11 点 15 分）发一条消息报平安，并<b>一直共享实时位置</b>。</li>
+    <li>徒步期间山上信号差，提前说好“徒步中，可能 2–3 天没消息”，给出预计下山日期。</li>
+    <li>约定一句只有你们知道的暗号，用来确认消息真的是你本人发的。</li>
+    <li>说好超时怎么办：城里超过 24 小时、徒步超过预计下山日 1 天没有消息，家人先打你的电话和客栈电话，再联系向导公司，最后打 12308 找使馆。</li>
+  </ol>
+  <div class="note"><b>好处也不少：</b>独自旅行的女生在尼泊尔很容易交到朋友。青旅、徒步路上、Kopan 课程里都有很多一个人来的女生，可以搭伴走一段。</div>
+</section>
+
+<!-- 实用信息 -->
+<section id="info">
+  <h2>当地实用信息 <small>BASICS</small></h2>
+  <div class="tbl"><table>
+    <tbody>
+      <tr><td>时区</td><td>UTC+5:45，比北京时间晚 2 小时 15 分</td></tr>
+      <tr><td>货币</td><td>尼泊尔卢比（NPR），1 元人民币约 19 卢比</td></tr>
+      <tr><td>电话卡</td><td>Ncell 或 NTC，机场或市区营业厅凭护照办；山区 NTC 信号通常更好</td></tr>
+      <tr><td>插座</td><td>C、D、M 型混用，带一个万能转换插头</td></tr>
+      <tr><td>天气</td><td>10–11 月晴朗干燥；12–1 月加德满都早晚接近 0°C，南部平原白天约 20°C，常有晨雾</td></tr>
+      <tr><td>实用 App</td><td>Organic Maps 或 Maps.me（离线地图）、Pathao、inDrive、Google 翻译（下载尼泊尔语离线包）、Hamro Patro（当地日历和节日）</td></tr>
+      <tr><td>小费</td><td>餐厅一般已含 10% 服务费；向导和背夫徒步结束时给，约为总费用的 10–15%</td></tr>
+    </tbody>
+  </table></div>
+  <h3>礼仪</h3>
+  <ul class="clean">
+    <li>绕佛塔、转经筒按顺时针方向。</li>
+    <li>进寺庙和别人家门要脱鞋；有些印度教寺庙不让非印度教徒进入，门口有牌子。</li>
+    <li>用右手递东西、吃饭。不摸别人的头，不用脚指人或指佛像。</li>
+    <li>拍人之前先问一句。</li>
+  </ul>
+</section>
+
+<!-- 节日 -->
+<section id="fest">
+  <h2>行程里会遇到的节日 <small>FESTIVALS</small></h2>
+  <p class="sub">尼泊尔节日按农历定，每年日期不同，以下为 2026 年的估计，出发前用 Hamro Patro 核对。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>节日</th><th>大约日期</th><th>对行程的影响</th></tr></thead>
+    <tbody>
+      <tr><td>德赛节 Dashain</td><td class="num">10.11 – 10.25 前后</td><td>你落地前已经结束</td></tr>
+      <tr><td>灯节 Tihar</td><td class="num">11 月 6–11 日前后</td><td>你在加德满都谷地：7 日在纳加阔特，8、9 日住巴克塔普尔古城，夜里家家点油灯、挂万寿菊花环，前后还有纽瓦尔新年</td></tr>
+      <tr><td>婚礼节 Vivaha Panchami</td><td class="num">12 月中旬</td><td>贾纳克布尔最盛大的节日，你 12 月 11–14 日在那里，可能刚好碰上，以当地日历为准</td></tr>
+      <tr><td>圣诞和跨年</td><td class="num">12.25 / 12.31</td><td>你在十日内观里，安静地跨年</td></tr>
+      <tr><td>Maghe Sankranti</td><td class="num">1 月中旬</td><td>冬季节日，吃芝麻糖和山药，Kopan 结业那天前后</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 尼泊尔语 -->
+<section id="nepali">
+  <h2>尼泊尔语二十句 <small>PHRASES</small></h2>
+  <p class="sub">小城镇英语不太通，会这几句很管用。照着“注音”那一栏念就行；念不准就把最后一栏给对方看。</p>
+  <div class="tbl"><table class="phr">
+    <thead><tr><th>意思</th><th>注音（照着念）</th><th>拼写</th><th>नेपाली（给人看）</th></tr></thead>
+    <tbody>
+      <tr><td><b>你好 / 再见</b><small>见谁都能说，双手合十</small></td><td class="zy">纳马斯得</td><td class="rm">Namaste</td><td class="nm-np">नमस्ते</td></tr>
+      <tr><td><b>谢谢</b></td><td class="zy">丹亚巴德</td><td class="rm">Dhanyabad</td><td class="nm-np">धन्यवाद</td></tr>
+      <tr><td><b>多少钱？</b><small>买东西、坐车前先问</small></td><td class="zy">嘎蒂 霍？</td><td class="rm">Kati ho?</td><td class="nm-np">कति हो?</td></tr>
+      <tr><td><b>太贵了</b><small>砍价时笑着说</small></td><td class="zy">马杭沟 巴哟</td><td class="rm">Mahango bhayo</td><td class="nm-np">महँगो भयो</td></tr>
+      <tr><td><b>不要，不需要</b><small>拒绝拉客、推销，边说边走</small></td><td class="zy">恰因代纳</td><td class="rm">Chahindaina</td><td class="nm-np">चाहिँदैन</td></tr>
+      <tr><td><b>……在哪里？</b><small>前面加地名，比如 Toilet kahaa chha?</small></td><td class="zy">…… 卡汗 恰？</td><td class="rm">... kahaa chha?</td><td class="nm-np">... कहाँ छ?</td></tr>
+      <tr><td><b>这车去……吗？</b><small>上公交前问售票员，中间加地名</small></td><td class="zy">哟 巴斯 …… 詹恰？</td><td class="rm">Yo bus ... jaanchha?</td><td class="nm-np">यो बस ... जान्छ?</td></tr>
+      <tr><td><b>停这里</b><small>下车、打车到了</small></td><td class="zy">亚汗 罗克努斯</td><td class="rm">Yahaa roknus</td><td class="nm-np">यहाँ रोक्नुस्</td></tr>
+      <tr><td><b>慢一点</b><small>司机开太快、别人说太快都能用</small></td><td class="zy">比斯达莱</td><td class="rm">Bistarai</td><td class="nm-np">बिस्तारै</td></tr>
+      <tr><td><b>我听不懂</b></td><td class="zy">麦莱 布吉纳</td><td class="rm">Maile bujhina</td><td class="nm-np">मैले बुझिनँ</td></tr>
+      <tr><td><b>请再说一遍</b></td><td class="zy">佩里 般努斯</td><td class="rm">Pheri bhannus</td><td class="nm-np">फेरि भन्नुस्</td></tr>
+      <tr><td><b>我是中国人</b><small>别说成 Chini，那是“糖”</small></td><td class="zy">马 吉尼扬 胡</td><td class="rm">Ma Chiniyaa hu</td><td class="nm-np">म चिनियाँ हुँ</td></tr>
+      <tr><td><b>是 / 不是</b></td><td class="zy">霍 / 霍伊纳</td><td class="rm">Ho / Hoina</td><td class="nm-np">हो / होइन</td></tr>
+      <tr><td><b>有 / 没有</b><small>问有没有房、有没有车</small></td><td class="zy">恰 / 恰因</td><td class="rm">Chha / Chhaina</td><td class="nm-np">छ / छैन</td></tr>
+      <tr><td><b>水</b><small>买瓶装水说 Mineral water</small></td><td class="zy">巴尼</td><td class="rm">Pani</td><td class="nm-np">पानी</td></tr>
+      <tr><td><b>好吃</b><small>老板会很高兴</small></td><td class="zy">米妥 恰</td><td class="rm">Mitho chha</td><td class="nm-np">मिठो छ</td></tr>
+      <tr><td><b>够了，吃饱了</b><small>吃达八饭会一直给你添，用这句挡</small></td><td class="zy">布格哟</td><td class="rm">Pugyo</td><td class="nm-np">पुग्यो</td></tr>
+      <tr><td><b>请给我账单</b></td><td class="zy">比尔 迪努斯</td><td class="rm">Bill dinus</td><td class="nm-np">बिल दिनुस्</td></tr>
+      <tr><td><b>大哥 / 大姐</b><small>叫司机、店主、阿姨，比 Sir 亲切</small></td><td class="zy">代 / 迪迪</td><td class="rm">Dai / Didi</td><td class="nm-np">दाइ / दिदी</td></tr>
+      <tr><td><b>帮帮我！</b><small>遇到麻烦大声说，再打 100 报警</small></td><td class="zy">马达特 嘎努斯！</td><td class="rm">Maddat garnus!</td><td class="nm-np">मद्दत गर्नुस्!</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>怎么念更像：</b>中文注音只能近似。k、t、p 要念得轻，像“嘎、达、巴”，不送气；句尾的 <b>-nus</b> 是“请”的意思，加上就是礼貌说法。尼泊尔人很乐意教，念错了对方也会笑着帮你纠正。在南部平原（Terai）很多人母语是迈蒂利语或博杰普尔语，但都听得懂尼泊尔语，也大多会说印地语。</div>
+</section>
+
+<!-- 找工作 -->
+<section id="job">
+  <h2>求职节奏 <small>CAREER</small></h2>
+  <p class="sub">35 岁换方向不算晚，前提是回去的时候心里有数。</p>
+  <div class="tbl"><table>
+    <thead><tr><th>阶段</th><th>做什么</th><th>不做什么</th></tr></thead>
+    <tbody>
+      <tr><td>11 月</td><td>每晚写几行日记，记录哪些时刻让你有劲、哪些让你烦</td><td>不打开招聘软件</td></tr>
+      <tr><td>12 月</td><td>在迦毗罗卫写下三个可能的方向，内观期间不想工作</td><td>不投简历</td></tr>
+      <tr><td>1 月</td><td>在帕坦更新简历和作品集，联系以前的同事朋友，约远程面试，投首选方向</td><td>不为了"赶紧有着落"乱投</td></tr>
+      <tr><td>回国前一周</td><td>定下首选方向和两份备选，列出回国第一个月的求职计划</td><td></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 待办 -->
+<section id="todo">
+  <h2>出发前待办 <small>CHECKLIST</small></h2>
+  <p class="progress" id="prog">已完成 0 / 0</p>
+  <ul class="checks" id="checks">
+    <li><label><input type="checkbox" id="t1"><span>打电话问 Kopan（+977 1 4821 268）：1 月有没有 7 天左右的短期课程，提前报名</span></label></li>
+    <li><label><input type="checkbox" id="t2"><span>在 dhamma.org 查 Dhamma Shringa 12 月下旬的十日内观，提交申请</span></label></li>
+    <li><label><input type="checkbox" id="t3"><span>买含高海拔徒步和直升机救援的 90 天旅行险</span></label></li>
+    <li><label><input type="checkbox" id="t4"><span>买机票：11 月 2 日去，1 月 30 日回（第 90 天，不能再晚）</span></label></li>
+    <li><label><input type="checkbox" id="t5"><span>核对护照有效期，准备 4 张白底证件照</span></label></li>
+    <li><label><input type="checkbox" id="t6"><span>在大使馆官网确认最新签证政策和安全提醒，存下领保电话</span></label></li>
+    <li><label><input type="checkbox" id="t7"><span>换 500–1000 美元现金，确认两张银行卡都开通境外取现</span></label></li>
+    <li><label><input type="checkbox" id="t8"><span>办好社保续缴或代缴，登记失业金</span></label></li>
+    <li><label><input type="checkbox" id="t9"><span>问医生：狂犬疫苗、甲肝疫苗、高原药</span></label></li>
+    <li><label><input type="checkbox" id="t10"><span>磨合徒步鞋，出发前两周每周爬两次山或楼梯</span></label></li>
+    <li><label><input type="checkbox" id="t11"><span>下载离线地图和尼泊尔语离线翻译包</span></label></li>
+    <li><label><input type="checkbox" id="t12"><span>预订 Thamel 客栈 11 月 2 日到 6 日共 5 晚，加订 11 月 2 日晚上的机场接机，问好能不能把箱子寄存到 12 月 14 日；再订纳加阔特 7 日 1 晚、巴克塔普尔古城 8、9 日 2 晚</span></label></li>
+    <li><label><input type="checkbox" id="t13"><span>联系徒步向导和背夫，确认 11 月 14 日出发、11 天</span></label></li>
+    <li><label><input type="checkbox" id="t14"><span>选定要学的硬技能，准备好课程或资料</span></label></li>
+    <li><label><input type="checkbox" id="t15"><span>开一个游记账号（小红书、公众号或视频号）</span></label></li>
+    <li><label><input type="checkbox" id="t16"><span>在“中国领事”App 登记出行信息</span></label></li>
+    <li><label><input type="checkbox" id="t17"><span>跟家人约好报平安时间、暗号和超时怎么办，开启位置共享</span></label></li>
+    <li><label><input type="checkbox" id="t18"><span>优先找女性向导公司（如 3 Sisters Adventure Trekking）</span></label></li>
+    <li><label><input type="checkbox" id="t20"><span>出发前一周：查 ACAP 和尼泊尔旅游局公告，确认 Poon Hill 加 ABC 开放</span></label></li>
+    <li><label><input type="checkbox" id="t21"><span>把大使馆领保电话 +977-1-4531511 存进手机，再写一张纸质卡片</span></label></li>
+    <li><label><input type="checkbox" id="t19"><span>备齐保暖内衣、长裙或宽松长裤、大围巾、墨镜和防晒</span></label></li>
+  </ul>
+</section>
+
+<footer>
+  价格、许可规定和课程日期会变，表中数字是估算，出发前以官方和商家最新信息为准。勾选状态只保存在你当前的浏览器里。
+</footer>
+</div>
+
+<script>
+(function(){
+  // 每天：p 地点 · t 标题 · hk 强度 · am 上午 · pm 下午 · ev 晚上 · go 交通 · $ 花费 · tip 提醒 · s 住处（省略则同前一天）· l 学习标签 · r 本周休整半天 · k 闭关/课程日
+  var D=[
+  // ── 第 1 段：加德满都谷地（住 Thamel，当天往返）──
+  {p:'加德满都',t:'晚上落地',
+   am:'在家收拾。出发前在尼泊尔移民局官网填好在线入境表并截图。',
+   pm:'国内航班出发。',
+   ev:'落地加德满都，落地签选 90 天。在到达大厅办 Ncell 电话卡，换少量卢比。出门找客栈安排的接机司机（举你名字的牌子），直接去住处。给家里报平安，打开位置共享。',
+   go:'晚上到达别打路边车。首选订住处时加订接机，约 45–55 元；也可以在到达大厅连 Wi-Fi 叫 inDrive，正常约 500 卢比，机场门口司机会要 1200 卢比',$:'约 300 元',
+   tip:'第一周一直住这家 Thamel 客栈，行李箱不用搬。机场外主动拉你的“免费导游”一律说 No thanks，入境时有人索要小费也拒绝。',s:'Thamel 客栈，单间约 80–150 元，连住 5 晚'},
+  {p:'加德满都 · 帕坦',t:'一天两座古城',l:'英语',
+   am:'05:30 打车去斯瓦扬布寺（猴庙）看日出，门票约 10 元。08:30 到加德满都杜巴广场（约 53 元），看老王宫和库玛丽女神庙。10:30 穿过 Asan 老市场。',
+   pm:'12:30 打车去帕坦，广场边吃午饭。13:30 进帕坦博物馆（含在帕坦广场门票里，约 53 元），至少看 2 小时。15:30 金庙和铜像作坊。',
+   ev:'17:30 帕坦屋顶咖啡馆看日落。19:00 Jhamsikhel 吃晚饭，打车回 Thamel。20:30 第 1 节线上英语外教课。',
+   go:'Pathao 或 inDrive 叫汽车（选 Car，不选摩托），每段约 10–25 元',$:'约 300 元',
+   tip:'猴庙的猴子会抢吃的和塑料袋，东西全部收进包里。'},
+  {p:'博达哈 · Kopan · 帕斯帕提那',t:'佛塔、寺院、晚祷',
+   am:'06:00 绕博达哈大佛塔转经（门票约 21 元），佛塔边吃早饭。08:30 打车 20 分钟上 Kopan 寺，去办公室问清楚 12 月到 1 月有哪些短期课程，当场报名。',
+   pm:'回博达哈逛唐卡店和藏式小巷。15:00 回 Thamel，健身房办周卡，练 1 小时。',
+   ev:'17:30 到帕斯帕提那神庙（约 53 元），坐在河对岸台阶上看晚祷。20:30 英语课。',
+   go:'打车，全天约 80 元',$:'约 350 元',
+   tip:'帕斯帕提那有露天火葬台，不要近距离拍照，非印度教徒不能进主殿。'},
+  {p:'加德满都',t:'网球、攀岩，半天休整',l:'网球 · 攀岩',r:1,
+   am:'06:30 酒店网球场打 1.5 小时，请教练陪练，约 150–200 元。10:00 Thamel 附近的室内攀岩墙上新手课。',
+   pm:'这周的休整半天：洗衣服、补觉。买保暖内衣、羊毛袜、净水片和常用药，在 Thamel 买一个 40 升左右的双肩包。跟徒步向导和背夫确认 11 月 14 日出发。',
+   ev:'19:00 写第一周笔记。20:30 英语课。',
+   $:'约 450 元（含采购）',
+   tip:'Thamel 的户外装备大多是仿品，衣服袜子够用，鞋子从国内带磨合好的。'},
+  {p:'加德满都 ⇄ 潘瑙蒂',t:'纽瓦尔古镇一日游',
+   am:'07:30 走到 Ratna Park 旁边的 Bir Hospital 车站，坐直达潘瑙蒂的大巴，约 1.5 小时。09:30 到 Panauti Bus Park，走 15 分钟进老镇，先去 Brahmayani 神庙。',
+   pm:'走 100 米到 Unmatta Bhairav 神庙，再走 200 米到两河交汇处的 Indreshwar Mahadev 神庙（12 世纪的木雕，门票 300 卢比）。12:30 在老镇吃一顿纽瓦尔菜。14:00 在红砖小巷里随便走，看老人在寺庙前聊天。15:30 走回车站。',
+   ev:'16:00 坐直达车回加德满都，最晚 18:00 前上车。19:00 回到 Thamel。20:30 英语课。',
+   go:'公交单程 70 卢比（约 4 元），往返约 8 元；打车单程约 150 元',$:'约 200 元',
+   tip:'回程过了 18:00 就没有直达车了，要先坐到 Banepa 再转车。这一天只背小包。'},
+  {p:'加德满都 → 纳加阔特',t:'寄存行李，上山看日落',l:'网球',
+   am:'07:00 网球 1 小时。09:00 退房，把行李箱寄存在 Thamel 客栈，说好 12 月 14 日回来再住、再取箱子。只背双肩包，装一周的衣服。10:00 打车约 1.5 小时上纳加阔特（2175 米）。',
+   pm:'12:00 入住观景客栈，吃午饭。14:00 沿山脊步道走一圈。',
+   ev:'17:15 看雪山日落。晚饭后早睡，明早看日出。',
+   go:'Thamel 打车到纳加阔特约 1500–2000 卢比（约 80–105 元），谈好总价，送到客栈门口，到了再付钱',$:'约 450 元',
+   tip:'寄存前把箱子锁好，贵重物品随身带，拍一张箱子的照片。纳加阔特订离观景塔近的客栈：公交只停在山下，离观景台还有 4–5 公里。',s:'纳加阔特观景客栈，约 100–250 元'},
+  {p:'纳加阔特 → 昌古纳拉扬 → 巴克塔普尔',t:'日出、山脊徒步，住进古城过灯节',hk:'以下坡为主，爬升约 200 米 · 约 11 公里',
+   am:'05:45 上观景塔看日出，天晴能看到一整排雪山。07:30 沿山脊徒步 3–4 小时下到昌古纳拉扬神庙（世界遗产，约 16 元）。',
+   pm:'12:30 在神庙边吃午饭。13:30 打车 15–20 分钟到巴克塔普尔，入口买门票，中国护照约 500 卢比（约 26 元），跟售票处说住在古城里，多日票同价。票背面会写护照号，护照和票随身带，进出会查。入住古城客栈，午睡。17:00 走到德达特勒亚广场看日落，旁边小巷里有著名的孔雀窗。',
+   ev:'这天前后是灯节的拉克希米节，古城家家点油灯、门口画彩色曼陀罗。一日游的游客傍晚都走了，夜里的广场只剩本地人。在陶马迪广场边的屋顶餐厅吃晚饭，能俯看五层塔。',
+   go:'昌古纳拉扬打车到巴克塔普尔约 30 元',$:'约 400 元（含门票）',
+   tip:'古城里是砖路和坡路，背双肩包正合适。',s:'巴克塔普尔古城客栈，民居或老宅改的，约 100–200 元'},
+  {p:'巴克塔普尔',t:'古城一整天：清晨、陶艺、唐卡、夜色',l:'陶艺 · 唐卡',
+   am:'06:00 趁游客还没来，在古城里走一圈：本地人在神庙前上供、打水、晒谷子，五层的尼亚塔波拉神庙前几乎没人。08:00 早饭。10:00 陶器广场上 1.5 小时拉坯课。12:00 吃王者酸奶 Juju Dhau（约 60 卢比，肠胃弱的少吃）和纽瓦尔午饭。',
+   pm:'14:00 唐卡画坊上 2 小时线描体验课。16:30 看杜巴广场、55 窗宫和黄金门。',
+   ev:'18:00 陶马迪广场每晚有本地人唱传统颂歌，坐在台阶上听一会儿。这几天前后是纽瓦尔新年，街上可能有游行。确认明早的车，早睡。20:30 英语课。',
+   $:'约 400 元',
+   tip:'让客栈帮你订明早 07:00 从 Kantipath 出发去博卡拉方向的旅游大巴，再约好 05:45 来接你的出租车。'},
+  // ── 第 2 段：西行上山 ──
+  {p:'巴克塔普尔 → 班迪普尔',t:'坐旅游大巴向西',
+   am:'05:45 坐约好的出租车从巴克塔普尔出发，40 分钟到 Thamel 旁边的 Kantipath 旅游大巴站。07:00 坐开往博卡拉的旅游大巴，上车就跟售票员说去班迪普尔，在缆车下站（Bandipur Cable Car Lower Station）或 Dumre 下车，快到时再提醒一次。车程约 4–5 小时，中途停车吃饭。',
+   pm:'两种上山办法：在缆车下站下车，门卫会叫免费摆渡车送到缆车口，缆车单程 400 卢比（约 21 元）；或者在 Dumre 下车，换吉普或小巴上山，约 30 分钟。12:30 入住老街客栈，吃午饭。15:00 逛老街。',
+   ev:'17:00 走 20 分钟上 Thani Mai 山顶看日落。19:00 老街吃晚饭。',
+   go:'旅游大巴约 60–80 元，提前一天在住处或 bussewa.com 订票。另一种是去 Gongabu 新巴士站买去 Dumre 的公交大巴票，800 卢比，车况一般，不推荐。缆车单程 400 卢比，往返 700 卢比；只买单程，下山另有办法',$:'约 300 元',
+   tip:'女生坐车：选靠前、靠过道、旁边是女乘客的座位，大包放行李舱，小包放腿上。',s:'班迪普尔老宅客栈，约 100–300 元'},
+  {p:'班迪普尔',t:'溶洞加山村',l:'作品集',hk:'全天爬升约 400 米 · 约 12 公里',
+   am:'05:45 Thani Mai 看雪山日出。07:30 请客栈介绍的当地向导（约 50–100 元）去 Siddha 溶洞，单程下坡 1.5 小时，带头灯。出洞后到山下公路的 Bimalnagar，坐吉普回来。',
+   pm:'13:30 走到马加尔族的 Ramkot 村看圆形老房子，来回约 3.5 小时。',
+   ev:'在老街咖啡馆把第一篇游记改完发出去。20:30 英语课。',
+   $:'约 300 元（含向导）'},
+  {p:'班迪普尔 → 博卡拉',t:'到博卡拉就飞滑翔伞',l:'滑翔伞',
+   am:'两种下山办法。一是坐缆车：缆车约 10 点开，单程 400 卢比，到下站跟工作人员说去博卡拉，免费摆渡车会把你送到公路路口，路边招手拦往博卡拉的公交大巴，约 2–2.5 小时。二是 07:00 坐吉普下到 Dumre，在路边等往博卡拉的大巴，约 3 小时，客栈老板可以帮你打电话问车到哪了。',
+   pm:'11:00 入住博卡拉湖边。12:30 飞一次滑翔伞双人体验，约 600–800 元，含接送。15:30 划船到湖对岸，爬 1 小时到世界和平塔。',
+   ev:'17:30 和平塔看雪山日落，坐船回湖边。20:30 英语课。',
+   go:'路边拦的公交大巴一人约 300–400 卢比，上车前谈好送到湖边。摆渡车司机介绍的“中间人”开价一人 800 卢比，直接拒绝。不想在路边等车，就让客栈叫车直送到博卡拉，包车约 3000–4000 卢比',$:'约 1000 元（含滑翔伞）',
+   tip:'滑翔伞只在天气好时飞，今天飞不了就挪到明天下午。',s:'博卡拉湖边客栈，约 80–150 元'},
+  {p:'博卡拉',t:'日出、许可、打包',
+   am:'05:00 打车上 Sarangkot 看日出照亮鱼尾峰。08:00 回城，跟向导去旅游局办 ACAP 许可（约 160 元，带护照和 2 张证件照），顺便问清这几天的路况和天气预警。',
+   pm:'10:00 租睡袋、羽绒服、两根登山杖，买路上吃的。13:00 国际山地博物馆（约 25 元）。15:30 Devi 瀑布和 Gupteshwor 洞。',
+   ev:'打包：大包交给背夫，不超过 12 公斤；自己只背 20 升小包，5 公斤以内。用不上的行李寄存在客栈。把 11 天行程和下山日期（11 月 24 日）发给家人。21:30 睡觉。',
+   $:'约 450 元',
+   tip:'跟向导和背夫确认清楚：每天多少钱，包不包他们的吃住和交通。'},
+  {p:'Nangethanti · 2430 米',t:'徒步第 1 天',hk:'爬升约 450 米 · 约 5 公里 · 3 小时',
+   am:'07:00 跟向导和背夫碰头。从博卡拉 Baglung 巴士站坐吉普 2–3 小时到 Ulleri，向导会安排。',
+   pm:'从 Ulleri 沿石阶穿过杜鹃林，慢慢走 3 小时到 Nangethanti。',
+   ev:'茶屋火炉边吃豆汤饭，早睡。',
+   go:'吉普跟向导分摊',$:'约 250 元，另付向导和背夫费',
+   tip:'第一天石阶多，按自己的节奏走。喘到说不出话，就是走太快了。',s:'山上茶屋'},
+  {p:'Ghorepani · 2860 米',t:'徒步第 2 天',hk:'爬升约 430 米 · 约 4 公里 · 2–3 小时',
+   am:'08:00 出发，2–3 小时走到 Ghorepani。',
+   pm:'在村里休息、逛逛，让身体适应海拔。',
+   ev:'20:30 睡觉，明早 04:45 起床。',
+   $:'约 250 元'},
+  {p:'Poon Hill 3210 米 → Tadapani 2630 米',t:'徒步第 3 天',hk:'爬升约 600 米 · 约 12 公里 · 6–7 小时',
+   am:'04:45 带头灯爬 1 小时上 Poon Hill，看日出照亮道拉吉里和安纳普尔纳。回 Ghorepani 吃早饭。',
+   pm:'翻过 3100 米的垭口，沿山脊走到 Tadapani。',
+   ev:'傍晚看鱼尾峰，早睡。',
+   $:'约 250 元'},
+  {p:'琼弄 · 2170 米',t:'徒步第 4 天',hk:'爬升约 450 米 · 约 10 公里 · 5–6 小时',
+   am:'从 Tadapani 一路下坡，经过古隆族村子下到河谷。',
+   pm:'从河谷爬上琼弄。',
+   ev:'琼弄有面包房，买块巧克力蛋糕。这是最后一个大补给点。',
+   $:'约 250 元',
+   tip:'往上走有 ACAP 检查站，许可证放在好拿的地方。'},
+  {p:'竹林 Bamboo · 2310 米',t:'徒步第 5 天',hk:'爬升约 650 米 · 约 9 公里 · 5–6 小时',
+   am:'下几百级石阶到河边，过吊桥，再爬上 Sinuwa。',
+   pm:'走进峡谷，到竹林。',
+   ev:'睡前拉伸 15 分钟。',
+   $:'约 250 元',
+   tip:'按当地习俗，从这里往上的茶屋基本不卖肉。'},
+  {p:'Himalaya · 2920 米',t:'徒步第 6 天',hk:'爬升约 610 米 · 约 6 公里 · 4 小时',
+   am:'穿过竹林和杜鹃林往上走。',
+   pm:'中午前后到 Himalaya，下午休息。',
+   ev:'喝够 3–4 升水，早睡。',
+   $:'约 300 元',
+   tip:'接近 3000 米，留意高反：头疼、恶心、睡不着。加重就告诉向导。'},
+  {p:'德拉利 Deurali · 3230 米',t:'徒步第 7 天',hk:'爬升约 410 米（含适应散步）· 约 4 公里 · 2 小时',
+   am:'2 小时走到德拉利，今天故意走得短，让身体适应海拔。',
+   pm:'午饭后往上慢慢走 100 米再回来。',
+   ev:'不洗头，早睡。',
+   $:'约 300 元',
+   tip:'这一段有雪崩风险，听向导安排，下午别在峡谷里逗留。'},
+  {p:'鱼尾峰大本营 MBC · 3700 米',t:'徒步第 8 天',hk:'爬升约 470 米 · 约 4 公里 · 3 小时',
+   am:'约 3 小时走到鱼尾峰大本营。',
+   pm:'营地休息、晒太阳。',
+   ev:'19:00 吃完就睡，明早 04:30 起。',
+   $:'约 300 元'},
+  {p:'ABC 4130 米 → Dovan 2600 米',t:'徒步第 9 天：大本营日出',hk:'爬升约 430 米，下降约 1500 米 · 约 14 公里 · 8 小时',
+   am:'04:30 出发，1.5 小时摸黑走到安纳普尔纳大本营，看日照金山。回 MBC 吃早饭。',
+   pm:'一路下撤到 Dovan。',
+   ev:'吃完饭拉伸，早睡。',
+   $:'约 300 元',
+   tip:'头疼越来越重、走路不稳、喘不上气，必须马上往下撤。下坡把登山杖调长，小步走。'},
+  {p:'琼弄 · 2170 米',t:'徒步第 10 天',hk:'爬升约 550 米 · 约 10 公里 · 5–6 小时',
+   am:'从 Dovan 经过竹林、Sinuwa 往回走。',
+   pm:'下到河边，再爬上琼弄，回程最后一段上坡。',
+   ev:'在面包房庆祝一下。',
+   $:'约 250 元'},
+  {p:'琼弄 → 吉努 → 博卡拉',t:'徒步第 11 天：下山',hk:'基本都是下坡 · 约 6 公里 · 3 小时',
+   am:'07:00 下坡 1 小时到吉努，去河边泡天然温泉，约 5 元。',
+   pm:'走 1.5 小时到公路，坐吉普回博卡拉。还装备，给向导和背夫小费，一般是各自费用的 10–15%。',
+   ev:'洗热水澡，给家人报平安。',
+   go:'吉普跟向导分摊',$:'约 300 元，另付小费',s:'博卡拉湖边客栈'},
+  {p:'博卡拉',t:'恢复日，也是机动日',r:1,
+   am:'本周的休整半天：睡到自然醒，衣服送洗，湖边吃早午饭。',
+   pm:'14:00 正规按摩店做全身按摩，约 100–150 元。16:00 健身房拉伸。',
+   ev:'整理徒步照片，发一条。20:30 英语课，用英语讲这次徒步。',
+   $:'约 300 元',
+   tip:'徒步因为天气推迟的话，今天和后面的皮划艇营都可以往后挪，最多能腾出 3 天。'},
+  {p:'博卡拉',t:'皮划艇入门营第 1 天',l:'皮划艇 · 瑜伽',
+   am:'06:30 瑜伽 1 小时。08:30 皮划艇营开课，在费瓦湖上练划桨和翻船自救。',
+   pm:'接着在湖上练，16:00 下课。',
+   ev:'18:00 拉伸。20:30 英语课。',
+   $:'4 天入门营约 2000–3000 元，含装备和教练'},
+  {p:'博卡拉',t:'皮划艇第 2 天',l:'皮划艇 · 瑜伽',
+   am:'06:30 瑜伽。08:30 湖上练爱斯基摩翻滚。',
+   pm:'继续练，16:00 下课。',
+   ev:'18:00 健身房。',
+   $:'约 100 元'},
+  {p:'博卡拉',t:'皮划艇第 3 天：下河',l:'皮划艇',
+   am:'07:00 跟教练坐车去附近河段，第一次在急流里划。',
+   pm:'整天在河上，傍晚回博卡拉。',
+   ev:'20:30 英语课。',
+   $:'约 100 元',
+   tip:'下河一定穿好救生衣和头盔，听教练指令。'},
+  {p:'博卡拉',t:'皮划艇第 4 天：结业',l:'皮划艇 · 网球',
+   am:'07:00 再下一次河，跑一段更长的河道。',
+   pm:'结业合影。',
+   ev:'17:30 湖边酒店的网球场打 1 小时。',
+   $:'约 250 元'},
+  {p:'博卡拉',t:'双湖骑行加做饭课',l:'做饭',
+   am:'06:30 打车到 Begnas 湖，租自行车骑到 Rupa 湖，看湖边稻田和渔村。',
+   pm:'13:30 尼泊尔菜课，半天约 150 元，学做 momo 和豆汤饭。',
+   ev:'收拾行李，确认明早去坦森的车。',
+   $:'约 400 元'},
+  // ── 第 3 段：南下平原 ──
+  {p:'博卡拉 → 坦森',t:'翻山去山城',
+   am:'07:00 打车到博卡拉巴士总站（Prithvi Chowk），坐去 Butwal 的白天大巴，跟售票员说在坦森下车，约 5–6 小时，沿途是 Siddhartha 公路的山景。',
+   pm:'13:30 到坦森，有的车只停山下路口，再打车 10 分钟上城。入住，逛老街和 Bhagwati 神庙。',
+   ev:'老街吃晚饭。20:30 英语课。',
+   go:'大巴约 35 元；想舒服就包车，约 500–650 元，让博卡拉住处推荐司机',$:'约 250 元',
+   tip:'这段没有正规旅游大巴，公交大巴人多。白天坐、选前排，到了再给家里报平安。',s:'坦森客栈，约 80–200 元'},
+  {p:'坦森',t:'日出加宫殿遗址',hk:'爬升约 700 米，正好到上限 · 约 10 公里',
+   am:'06:00 爬 30 分钟上 Srinagar 山顶看雪山日出。08:30 走 1 小时山路下到 Rani Mahal 河边宫殿遗址，再走回来。',
+   pm:'14:00 Amar Narayan 神庙，在老城陡坡小巷里慢慢逛。',
+   ev:'20:30 英语课。',
+   $:'约 200 元'},
+  {p:'坦森',t:'Dhaka 织布课',l:'织布 · 求职',
+   am:'08:00 去 Dhaka 织布作坊跟师傅学 3 小时，试着织一小块。买一条 Dhaka 披肩。',
+   pm:'14:00 咖啡馆整理简历，列出这段时间写的文章和视频链接。',
+   ev:'确认明天去蓝毗尼的车。20:30 英语课。',
+   $:'约 300 元（含买布）'},
+  {p:'坦森 → 蓝毗尼',t:'下到佛陀诞生地',
+   am:'08:00 坐大巴 2 小时到 Butwal，换去蓝毗尼的小巴或大巴，约 1–1.5 小时。',
+   pm:'13:00 入住园区附近客栈。15:00 摩耶夫人庙、阿育王石柱和圣池（约 15 元）。',
+   ev:'在圣园菩提树下静坐 30 分钟。',
+   go:'两段车约 25 元；或坦森包车直达，约 300 元',$:'约 250 元',
+   tip:'Butwal 车站很乱，下车直接问写着 Lumbini 的车，别跟拉客的人走。',s:'蓝毗尼园区附近客栈，约 80–150 元'},
+  {p:'蓝毗尼',t:'骑车逛寺院区',
+   am:'07:00 租自行车（约 15 元一天），逛各国寺院：中华寺、德国寺、缅甸金塔、越南寺。',
+   pm:'韩国寺、泰国寺，再去蓝毗尼博物馆。',
+   ev:'早点休息。20:30 英语课。',
+   $:'约 200 元'},
+  {p:'迦毗罗卫',t:'佛陀长大的地方',l:'求职',
+   am:'07:00 包车约 1 小时去 Tilaurakot，迦毗罗卫古城遗址。',
+   pm:'接着去 Kudan 和 Niglihawa 的阿育王石柱，傍晚回蓝毗尼。',
+   ev:'写下 2027 年三个可能的方向：做什么、需要什么技能、去哪找机会。',
+   go:'客栈帮忙包车，一天约 300 元',$:'约 450 元'},
+  {p:'蓝毗尼',t:'禅修半天，半天休整',l:'冥想',r:1,
+   am:'06:00 去园区里的 Panditarama 国际内观中心等禅修中心练 3 小时，提前一天联系。',
+   pm:'本周的休整半天：洗衣服、补觉。',
+   ev:'确认明早去奇特旺的车。',
+   $:'约 150 元'},
+  {p:'蓝毗尼 → 奇特旺',t:'进丛林',
+   am:'07:00 坐去 Sauraha 的大巴，约 5–6 小时。没有直达车就先到 Bhairahawa 或 Butwal，坐往 Narayangarh 方向的大巴在 Tandi 下，再打车 10 分钟。',
+   pm:'14:00 入住 Sauraha 丛林小屋，订好接下来两天的活动。16:00 Rapti 河边看日落。',
+   ev:'19:00 看塔鲁族舞蹈表演，约 10 元。',
+   go:'大巴约 50 元',$:'约 300 元',
+   tip:'活动只订有执照的向导，看评价选。',s:'Sauraha 丛林小屋，约 100–250 元'},
+  {p:'奇特旺',t:'独木舟加半天丛林徒步',hk:'平地 · 约 8 公里',
+   am:'06:30 坐独木舟顺河漂 1 小时，看鳄鱼和翠鸟。接着跟两名持证向导在丛林走 3–4 小时。',
+   pm:'回小屋吃午饭。下午去塔鲁族博物馆。',
+   ev:'早睡。',
+   $:'约 450 元（公园门票、独木舟、向导）',
+   tip:'碰到犀牛听向导的：躲到大树后面或爬上树，别直线跑。'},
+  {p:'奇特旺',t:'全天吉普游猎',
+   am:'06:30 坐吉普深入公园，看犀牛、野牛和鹿，运气好能看到懒熊。',
+   pm:'公园里吃午饭，傍晚回来。',
+   ev:'20:30 英语课。确认明早去贾纳克布尔的车。',
+   $:'约 500 元'},
+  {p:'奇特旺 → 贾纳克布尔',t:'往东去平原圣城',
+   am:'06:30 打车到 Bharatpur 或 Narayangarh 巴士站，坐去贾纳克布尔的白天豪华大巴，沿东西公路约 6–7 小时。',
+   pm:'14:00 到贾纳克布尔，入住。16:00 白色大理石的 Janaki Mandir 神庙。',
+   ev:'17:30 在神庙看晚祷，人多热闹。',
+   go:'大巴约 60 元，在小屋或 bussewa.com 订票；想快一点就包车，约 800 元',$:'约 300 元',
+   tip:'这一带比较保守：穿长裤或长裙，遮住肩膀，围巾随身带，天黑后不一个人在外面走。',s:'贾纳克布尔城区酒店，约 100–250 元'},
+  {p:'贾纳克布尔',t:'米提拉画第 1 天',l:'米提拉画',
+   am:'08:00 坐电动三轮去城郊的 Janakpur Women\'s Development Center，谈好跟学两天。学基本线条和边框纹样。',
+   pm:'练鱼、孔雀、莲花这些常见图案。',
+   ev:'画稿拍照。20:30 英语课。',
+   $:'课费当面谈，加生活费约 200 元',
+   tip:'婚礼节（Vivaha Panchami）大约在 12 月中旬，城里会非常热闹，碰上的话值得多留一天。具体日期看当地日历。'},
+  {p:'贾纳克布尔',t:'米提拉画第 2 天',l:'米提拉画',
+   am:'08:00 开始画一幅完整的小画。',
+   pm:'14:00 画完带走。16:00 去 Ganga Sagar 圣湖边散步。',
+   ev:'早睡，明早飞加德满都。',
+   $:'约 200 元'},
+  {p:'贾纳克布尔 → 加德满都',t:'飞回谷地，看 Kopan 佛塔开光',
+   am:'08:00 飞 30 分钟回加德满都。10:00 先去 Thamel 的客栈取寄存的行李箱，再打车去博达哈入住。',
+   pm:'Kopan 尼寺今天举行佛塔开光法会，去参加或旁观，具体时间提前问寺院。',
+   ev:'博达哈佛塔夜里转经。',
+   go:'机票约 600–900 元，Buddha Air、Yeti、Shree 都飞',$:'约 1000 元（含机票）',
+   tip:'开光法会的时间以 Kopan 官网和寺院公告为准。12 月 11 日 Kopan 主寺还有一场佛塔开光，那天你在奇特旺，赶不上。',s:'博达哈附近客栈'},
+  // ── 第 4 段：加德满都谷地学习期 ──
+  {p:'博达哈 → 帕坦',t:'搬进学习基地',
+   am:'09:00 去 Kopan 寺办公室，确认 1 月短期课程的报名。',
+   pm:'13:00 搬到帕坦 Jhamsikhel 一带，按周租带厨房的房间。这一片安静、餐厅和健身房多，女生住着方便。',
+   ev:'附近超市采购。20:30 英语课。',
+   go:'打车约 30 元',$:'约 300 元',s:'帕坦 Jhamsikhel 周租房，一周约 400–700 元'},
+  {p:'帕坦',t:'学习营第 1 天 · 基尔蒂普尔',l:'网球 · 尼泊尔语 · 健身',
+   am:'07:00 网球课 1 小时。10:00 尼泊尔语课 1.5 小时。',
+   pm:'14:00 打车去基尔蒂普尔老城，山顶上的纽瓦尔小城，游客很少。',
+   ev:'18:00 健身房。20:30 英语课。',
+   $:'约 350 元'},
+  {p:'帕坦',t:'学习营第 2 天 · 缆车看雪山',l:'攀岩 · 尼泊尔语',
+   am:'07:30 打车去 Chandragiri 缆车，上山看整排雪山，来回约 3 小时。',
+   pm:'13:30 尼泊尔语课。15:30 攀岩墙练 2 小时。',
+   ev:'20:30 英语课。',
+   $:'约 450 元（含缆车）'},
+  {p:'加德满都',t:'学习营第 3 天 · 森林登顶',l:'健身',hk:'爬升约 700 米，正好到上限 · 约 10 公里',
+   am:'06:30 去 Nagarjun 森林，爬到 Jamacho 山顶（2096 米），来回 4–5 小时。',
+   pm:'回帕坦午饭、午休。16:00 网球 1 小时。',
+   ev:'18:30 拉伸。20:30 英语课。',
+   $:'约 350 元（含公园门票）'},
+  {p:'帕坦',t:'学习营第 4 天 · 唐卡',l:'唐卡 · 尼泊尔语',
+   am:'07:00 网球课。10:00 尼泊尔语课。',
+   pm:'14:00 帕坦唐卡画坊上 3 小时课，练佛像比例线描。',
+   ev:'18:00 健身房。20:30 英语课。',
+   $:'约 400 元'},
+  {p:'帕坦',t:'半天休整，准备内观',r:1,
+   am:'07:00 健身房。09:00 洗衣服、补觉。',
+   pm:'本周的休整半天。把接下来 11 天要交代的事一次说完，告诉家人这期间不能用手机，留下中心电话。',
+   ev:'收拾内观要带的东西：宽松保暖的衣服、保温杯、披肩、拖鞋。手机和贵重物品入营时要上交。',
+   $:'约 150 元'},
+  {p:'Dhamma Shringa（Budhanilkantha）',t:'内观报到',k:'下午打车约 40 分钟到加德满都北边的 Dhamma Shringa 内观中心报到，交手机和贵重物品。晚上听开营说明，从这一刻起禁语。',tip:'开课日期以 dhamma.org 公布的为准，这里按 12 月 21 日报到排。课程免费，结束时自愿捐款。',s:'Dhamma Shringa 内观中心'}
+  ];
+  var V=[
+  ['练习观察鼻孔周围的呼吸（Anapana）。04:00 起床，全天大约 10 小时打坐。','第一天腿疼、走神、想回家都正常，坚持到第 3 天会好很多。'],
+  ['继续观察呼吸，把注意力收窄到鼻孔下方、上唇上方的一小块区域。','禁语包括手势和眼神交流，安心做自己的事。'],
+  ['继续 Anapana。留意注意力变得比第一天集中。',''],
+  ['正式开始学内观：从头到脚观察身体的感受。从今天起每天有三次“坚定决心”的静坐，一小时尽量不动。','腿麻难受时，先观察这种感受本身，实在受不了再轻轻换姿势。'],
+  ['继续扫描全身。只观察，不喜欢也不讨厌。',''],
+  ['情绪可能突然冒出来，想到离职、钱、家人，都是正常的，看着它来，看着它走。','有疑问可以在规定时间找老师问。'],
+  ['继续练习。晚上的开示录音会讲当天的重点，认真听。',''],
+  ['留意身体的感受一直在变化，没有哪一种会永远停留。',''],
+  ['最后几天的专注会明显变深，节奏放稳，不急。',''],
+  ['第 10 天上午学慈心观，之后解除禁语，可以说话了。','先跟同学聊聊，别急着打开手机刷消息。']
+  ];
+  V.forEach(function(v,i){D.push({p:'Dhamma Shringa',t:'内观第 '+(i+1)+' 天',k:v[0],tip:v[1],l:i===0?'内观':''})});
+  D=D.concat([
+  {p:'Dhamma Shringa → 帕坦',t:'新年第一天出营',
+   am:'07:00 结营后领回手机，打车回帕坦。',
+   pm:'午睡。给家里报平安。慢慢看消息，别一口气全回。',
+   ev:'写下 2026 年复盘：得到了什么、失去了什么、学会了什么。',
+   go:'打车约 60 元',$:'约 200 元，加给中心的随喜捐款',s:'帕坦 Jhamsikhel 周租房'},
+  {p:'帕坦 → 纳莫布达',t:'山路徒步进寺院',hk:'爬升约 500 米 · 约 12 公里 · 4–5 小时',
+   am:'07:00 打车到 Ratna Park 老巴士站，坐去 Dhulikhel 的大巴约 1.5 小时；或者直接打车，约 150 元。',
+   pm:'10:00 从 Dhulikhel 沿山路走 4–5 小时到纳莫布达，一路是村子和梯田。',
+   ev:'17:00 到施身佛塔（Namo Buddha Stupa）看日落、转经，这里的日落很有名。入住创古寺客栈（Thrangu Tashi Yangtse Monastery Guest House），一间约 2000 卢比，含一日三餐素食；平时直接到二楼接待处办入住，法会期间房间紧张要提前订。',
+   go:'大巴约 6 元',$:'约 300 元',s:'创古寺客栈，一间约 2000 卢比，含三餐素食'},
+  {p:'纳莫布达 → 帕坦',t:'早课后回城',l:'网球',
+   am:'05:30 跟僧人上早课，坐在后面旁听。07:00 参拜创古寺大殿（供奉释迦牟尼佛 8 岁等身像）和十六罗汉堂。然后去找真正的舍身饲虎古洞：从大殿出门左转下楼梯，跟着步道标识走，全程 20–30 分钟。山顶那个洞是后来修的，很多人导航会被带错。09:30 打车回帕坦。',
+   pm:'14:00 网球 1 小时。',
+   ev:'18:00 健身房。20:30 英语课。',
+   go:'打车约 150 元',$:'约 400 元',s:'帕坦 Jhamsikhel 周租房'},
+  {p:'帕坦 → 帕平 → 帕坦',t:'修行洞和峡谷一日',
+   am:'07:00 打车 1 小时到帕平，爬到莲花生大士修行洞，逛附近几座寺院。',
+   pm:'12:00 去 Dakshinkali 神庙（今天周一，不是祭祀日）。14:30 回程停乔巴尔峡谷走老吊桥，再看 Taudaha 湖。',
+   ev:'18:30 回帕坦。20:30 英语课。',
+   go:'包车一天约 250 元；公交从 Ratna Park 坐去 Pharping 的车，约 1.5 小时',$:'约 400 元'},
+  {p:'帕坦 → 努瓦科特',t:'老王宫过夜',
+   am:'07:00 坐车约 3 小时到努瓦科特。',
+   pm:'11:00 看七层老王宫和周边寺庙，在山脊上走走。',
+   ev:'住山上民宿，吃农家晚饭。',
+   go:'女生一个人建议包车，约 400 元；公交从 Machhapokhari 坐到 Bidur，再换吉普 20 分钟',$:'约 500 元',s:'努瓦科特民宿或小客栈，约 100–300 元'},
+  {p:'努瓦科特 → 帕坦',t:'村子晨走，回城',
+   am:'06:00 山村里走 2 小时看日出和梯田。09:00 坐车回帕坦。',
+   pm:'13:00 午饭。15:00 攀岩墙练 2 小时。',
+   ev:'20:30 英语课。',
+   $:'约 400 元',s:'帕坦 Jhamsikhel 周租房'},
+  {p:'帕坦',t:'半天休整，准备进 Kopan',r:1,
+   am:'07:00 网球课。10:00 尼泊尔语课。',
+   pm:'本周的休整半天：洗衣服、补觉。',
+   ev:'收拾去 Kopan 要带的东西：保暖衣物、笔记本、水杯、拖鞋、手电。告诉家人这一周回消息会慢。',
+   $:'约 300 元'},
+  {p:'Kopan 寺',t:'短期课程报到',k:'上午打车约 40 分钟上 Kopan 寺报到、领房间，熟悉讲堂和食堂，拿作息表。',tip:'这里按 1 月 8 日到 14 日的 7 天课程排。具体有什么课、哪天开，出发前打电话问 Kopan：+977 1 4821 268。没有合适的课，就在纳莫布达寺院短住一周代替。',l:'佛学',s:'Kopan 寺'}
+  ]);
+  var K=[
+  ['把作息表拍下来，跟着钟声走。课上只记关键词，睡前写三行：今天最触动我的一句话。','佛学名词听不懂很正常，在讨论小组里问。'],
+  ['在讨论小组里用英语说一句自己的想法。','组里各国人的英语都不完美，没有人会笑你。'],
+  ['对比一下内观和这里的冥想方法有什么不同，写在本子上。',''],
+  ['课上讲到“无常”时，回想这次离职：发生了什么，你当时什么感受。只回看，不责怪自己。',''],
+  ['跟一位同学吃饭，听听对方为什么来这里。','很多人和你一样，正站在人生的转折点上。'],
+  ['给三个月后的自己写一封信，封好，回国后再打开。','']
+  ];
+  K.forEach(function(k,i){D.push({p:'Kopan 寺',t:'课程第 '+(i+2)+' 天',k:k[0],tip:k[1]})});
+  D=D.concat([
+  {p:'Kopan → 帕坦',t:'结业，冬季节日',
+   am:'结业，跟同学合影、留联系方式。10:00 打车回帕坦。',
+   pm:'今天前后是 Maghe Sankranti 冬季节日，去市场尝芝麻糖和山药。',
+   ev:'20:30 恢复英语课。',
+   go:'打车约 40 元',$:'约 250 元',s:'帕坦 Jhamsikhel 周租房'},
+  {p:'奔加马蒂 · 柯卡纳',t:'木雕村一日',l:'木雕 · 尼泊尔语',
+   am:'07:00 网球课。10:00 打车 30 分钟到南边的奔加马蒂和柯卡纳两个纽瓦尔老村。',
+   pm:'跟木雕师傅上 2 小时入门课，看柯卡纳的老式榨油坊。',
+   ev:'18:00 健身房。20:30 英语课。',
+   $:'约 400 元'},
+  {p:'Godawari',t:'植物园和山脚古村',
+   am:'08:00 打车 1 小时到南边的 Godawari 植物园，走走看看。',
+   pm:'看 Godawari 的泉水神庙，再去附近的 Bishankhu Narayan 小庙。',
+   ev:'18:00 健身房。20:30 英语课。',
+   $:'约 300 元'},
+  {p:'帕坦',t:'求职日',l:'求职',
+   am:'07:00 网球课。09:00 咖啡馆改简历，把 2027 年三个方向缩成一个首选、两个备选。',
+   pm:'联系 3 位以前的同事或朋友，约语音聊方向和机会，记下所有线索。',
+   ev:'18:00 健身房。20:30 英语课：模拟面试。',
+   $:'约 250 元'},
+  {p:'帕坦 → 巴克塔普尔',t:'唐卡密集课第 1 天',l:'唐卡',
+   am:'08:00 打车 40 分钟到巴克塔普尔，去画坊上全天唐卡课。',
+   pm:'接着画，16:00 下课。',
+   ev:'住巴克塔普尔古城，夜里的古城几乎没有游客。',
+   go:'打车约 60 元',$:'约 500 元（含课费）',s:'巴克塔普尔古城客栈'},
+  {p:'巴克塔普尔 → 帕坦',t:'唐卡密集课第 2 天',l:'唐卡',
+   am:'08:00 继续上课，完成一幅小幅线描。',
+   pm:'14:00 回帕坦。16:00 网球 1 小时。',
+   ev:'20:30 英语课。',
+   $:'约 400 元',s:'帕坦 Jhamsikhel 周租房'},
+  {p:'帕坦',t:'远程面试日',l:'求职 · 攀岩',
+   am:'07:00 健身房。09:00 在网速好的咖啡馆约远程面试或线上沟通。',
+   pm:'复盘今天的沟通，改简历。15:30 攀岩墙 2 小时。',
+   ev:'20:30 英语课。',
+   $:'约 300 元'},
+  {p:'Budhanilkantha · Shivapuri',t:'睡卧毗湿奴和尼寺',hk:'爬升约 700 米，正好到上限 · 约 10 公里',
+   am:'07:00 打车到 Budhanilkantha 看睡在水池里的毗湿奴神像，再从 Shivapuri 国家公园入口爬到 Nagi Gompa 尼寺，看加德满都谷地。',
+   pm:'下山回帕坦，午休。',
+   ev:'18:30 拉伸。20:30 英语课。',
+   $:'约 350 元（含公园门票）'},
+  {p:'帕坦',t:'半天休整，模拟面试',r:1,l:'求职',
+   am:'本周的休整半天：洗衣服、补觉。',
+   pm:'14:00 用英语和中文各模拟一次面试，录下来回看。16:00 网球。',
+   ev:'20:30 英语课。',
+   $:'约 250 元'},
+  {p:'加德满都',t:'国家博物馆和猴庙',l:'尼泊尔语',
+   am:'07:00 网球课。10:00 尼泊尔语结业课，用尼泊尔语点一顿饭当考试。',
+   pm:'14:00 去 Chhauni 的国家博物馆，再走到猴庙看日落，跟第一天的日出对照。',
+   ev:'20:30 英语课。',
+   $:'约 300 元'},
+  {p:'帕坦',t:'求职冲刺',l:'求职',
+   am:'07:00 健身房。09:00 投递首选方向的岗位，跟进之前聊过的线索。',
+   pm:'约第二轮远程沟通。16:00 网球。',
+   ev:'列出回国第一个月的求职计划。20:30 英语课。',
+   $:'约 250 元'},
+  {p:'Hattiban',t:'户外攀岩一日课',l:'攀岩',
+   am:'07:30 跟攀岩教练坐车约 1 小时到加德满都南边的 Hattiban 户外岩场，从简单线路开始爬。',
+   pm:'继续爬到 15:00，回帕坦。',
+   ev:'18:30 拉伸。20:30 英语课。',
+   go:'攀岩课一般含接送',$:'约 400–600 元（含教练和装备）',
+   tip:'只跟有资质的攀岩公司去，出发前确认教练、保护装备和保险。'},
+  {p:'帕坦',t:'三个月总结',l:'作品集',
+   am:'07:00 最后一节网球课。09:00 整理三个月的素材。',
+   pm:'写一篇三个月的总结发出去。',
+   ev:'跟在尼泊尔认识的朋友吃告别饭。',
+   $:'约 300 元'},
+  {p:'帕坦',t:'最后一节课，收尾',l:'英语',
+   am:'07:00 健身房最后一练。09:00 退周租房前打扫、结清水电。',
+   pm:'14:00 帕坦杜巴广场再走一圈。',
+   ev:'20:30 最后一节英语课：用英语讲这 90 天。',
+   $:'约 250 元'},
+  {p:'加德满都',t:'买伴手礼',
+   am:'10:00 搬到 Thamel 住最后两晚。',
+   pm:'在 Thamel 买伴手礼：茶叶、羊绒围巾、小幅唐卡。砍价从标价的一半开始。15:00 回梦之花园坐一会儿，回到第一天的地方。',
+   ev:'最后一顿豆汤饭。',
+   go:'打车约 30 元',$:'约 300 元（不含伴手礼）',s:'Thamel 客栈'},
+  {p:'加德满都',t:'离境',
+   am:'退房，提前 3 小时到机场。',
+   pm:'剩下的卢比出境前花掉或换回去，国内换不了卢比。',
+   ev:'到家。',
+   go:'打车到机场约 40 元',$:'约 100 元',
+   tip:'第 90 天是签证最后一天，必须今天出境。',s:'回家'}
+  ]);
+
+  var WK='日一二三四五六';
+  var start=new Date(2026,10,2);
+  var phases=[[0,8,'第 1 段 · 加德满都谷地'],[8,29,'第 2 段 · 西行上山'],[29,43,'第 3 段 · 南下平原，飞回谷地'],[43,90,'第 4 段 · 谷地学习期']];
+  var box=document.getElementById('dayList');
+  var kc=document.getElementById('kopanCard');
+  var stay='';
+  function pad(n){return n<10?'0'+n:''+n}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function row(k,v,cls){return v?'<dt'+(cls?' class="'+cls+'"':'')+'>'+k+'</dt><dd>'+esc(v)+'</dd>':''}
+  phases.forEach(function(ph){
+    var wrap=document.createElement('div');wrap.className='phase';
+    var a=new Date(start);a.setDate(a.getDate()+ph[0]);
+    var b=new Date(start);b.setDate(b.getDate()+ph[1]-1);
+    wrap.innerHTML='<h3>'+ph[2]+'</h3><p class="progress">DAY '+pad(ph[0]+1)+'–'+pad(ph[1])+' · '+(a.getMonth()+1)+'.'+pad(a.getDate())+' – '+(b.getMonth()+1)+'.'+pad(b.getDate())+'</p>';
+    var ul=document.createElement('ol');ul.className='days';
+    for(var i=ph[0];i<ph[1];i++){
+      var d=D[i];if(d.s)stay=d.s;
+      var dt=new Date(start);dt.setDate(dt.getDate()+i);
+      var body=d.k!==undefined
+        ? row('今天',d.k)+row('提醒',d.tip,'w')+row('住',stay)
+        : row('强度',d.hk,'h')+row('上午',d.am)+row('下午',d.pm)+row('晚上',d.ev)+row('交通',d.go)+row('花费',d.$)+row('提醒',d.tip,'w')+row('住',stay);
+      var tags=(d.l?'<span class="lt">'+esc(d.l)+'</span>':'')+(d.r?'<span class="lt rest">半天休整</span>':'');
+      var li=document.createElement('li');li.id='d'+(i+1);
+      li.innerHTML='<div class="dn"><b>DAY '+pad(i+1)+'</b><span>'+(dt.getMonth()+1)+'.'+pad(dt.getDate())+'</span><em>周'+WK[dt.getDay()]+'</em></div>'+
+        '<div class="dc"><div class="pl">'+esc(d.p)+'</div><div class="ti">'+esc(d.t)+tags+'</div><dl class="dd">'+body+'</dl></div>';
+      ul.appendChild(li);
+    }
+    wrap.appendChild(ul);
+    if(ph[0]===43)wrap.insertBefore(kc,ul);
+    box.appendChild(wrap);
+  });
+
+  var now=new Date();now.setHours(0,0,0,0);
+  var diff=Math.round((now-start)/864e5);
+  var st=document.getElementById('dayStatus'),jb=document.getElementById('jumpToday');
+  if(diff<0){st.textContent='距离出发还有 '+(-diff)+' 天';}
+  else if(diff<90){
+    st.textContent='今天是第 '+(diff+1)+' 天';
+    var t=document.getElementById('d'+(diff+1));
+    if(t){t.classList.add('today');jb.hidden=false;jb.addEventListener('click',function(){t.scrollIntoView({block:'center'})});}
+  } else {st.textContent='旅程已结束';}
+})();
+
+(function(){
+  var KEY='nepal90-checks';
+  var boxes=[].slice.call(document.querySelectorAll('#checks input'));
+  var prog=document.getElementById('prog');
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){saved={}}
+  function update(){
+    var n=boxes.filter(function(b){return b.checked}).length;
+    prog.textContent='已完成 '+n+' / '+boxes.length;
+  }
+  boxes.forEach(function(b){
+    if(saved[b.id])b.checked=true;
+    b.addEventListener('change',function(){
+      saved[b.id]=b.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}
+      update();
+    });
+  });
+  update();
+})();
+
+(function(){
+  var N=[["加德满都谷地", "Kathmandu Valley"], ["加德满都杜巴广场", "Kathmandu Durbar Square"], ["加德满都", "Kathmandu"], ["帕坦杜巴广场", "Patan Durbar Square"], ["帕坦博物馆", "Patan Museum"], ["帕坦", "Patan"], ["巴克塔普尔", "Bhaktapur"], ["巴德岗", "Bhaktapur"], ["陶马迪广场", "Taumadhi Square"], ["德达特勒亚广场", "Dattatreya Square"], ["陶器广场", "Pottery Square"], ["尼亚塔波拉神庙", "Nyatapola Temple"], ["55 窗宫", "55 Window Palace"], ["杜巴广场", "Durbar Square"], ["纳加阔特", "Nagarkot"], ["昌古纳拉扬", "Changu Narayan"], ["潘瑙蒂", "Panauti"], ["班迪普尔", "Bandipur"], ["博卡拉", "Pokhara"], ["费瓦湖", "Phewa Lake"], ["世界和平塔", "World Peace Pagoda"], ["国际山地博物馆", "International Mountain Museum"], ["坦森", "Tansen"], ["蓝毗尼", "Lumbini"], ["摩耶夫人庙", "Maya Devi Temple"], ["迦毗罗卫", "Kapilvastu"], ["奇特旺", "Chitwan"], ["贾纳克布尔", "Janakpur"], ["纳莫布达", "Namo Buddha"], ["创古寺", "Thrangu Monastery"], ["帕平", "Pharping"], ["努瓦科特", "Nuwakot"], ["基尔蒂普尔", "Kirtipur"], ["奔加马蒂", "Bungamati"], ["柯卡纳", "Khokana"], ["乔巴尔峡谷", "Chobhar Gorge"], ["博达哈大佛塔", "Boudhanath Stupa"], ["博达哈", "Boudha"], ["斯瓦扬布寺", "Swayambhunath"], ["猴庙", "Swayambhunath"], ["帕斯帕提那神庙", "Pashupatinath Temple"], ["帕斯帕提那", "Pashupatinath"], ["金庙", "Golden Temple"], ["因陀罗广场", "Indra Chowk"], ["梦之花园", "Garden of Dreams"], ["琼弄", "Chhomrong"], ["吉努", "Jhinu Danda"], ["鱼尾峰大本营", "Machapuchare Base Camp"], ["鱼尾峰", "Machapuchare"], ["安纳普尔纳大本营", "Annapurna Base Camp"], ["安纳普尔纳", "Annapurna"], ["德拉利", "Deurali"], ["内观中心", "Dhamma Shringa"], ["特莱平原", "Terai"]];
+  var re=new RegExp(N.map(function(x){return x[0].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}).join('|'),'g');
+  var map={};N.forEach(function(x){map[x[0]]=x[1]});
+  var BLOCK='td,th,li,p,dd,dt,h2,h3,h4,.pl,.ti,b,.sub';
+  var seen=new WeakMap();
+  function walk(root){
+    var w=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode:function(n){
+      var p=n.parentNode;if(!p)return NodeFilter.FILTER_REJECT;
+      if(p.closest('script,style,svg,nav,.en-n,.nm,.en,title,.eyebrow'))return NodeFilter.FILTER_REJECT;
+      re.lastIndex=0;return re.test(n.nodeValue)?NodeFilter.FILTER_ACCEPT:NodeFilter.FILTER_REJECT}});
+    var list=[];while(w.nextNode())list.push(w.currentNode);
+    list.forEach(function(n){
+      var blk=n.parentNode.closest(BLOCK)||n.parentNode;var set=seen.get(blk);if(!set){set={};seen.set(blk,set)}
+      var txt=n.nodeValue,frag=document.createDocumentFragment(),last=0,m,changed=false;re.lastIndex=0;
+      while((m=re.exec(txt))){var en=map[m[0]];if(set[en])continue;set[en]=1;changed=true;
+        frag.appendChild(document.createTextNode(txt.slice(last,m.index+m[0].length)));
+        var sp=document.createElement('span');sp.className='en-n';sp.textContent=en;frag.appendChild(sp);last=m.index+m[0].length}
+      if(!changed)return;frag.appendChild(document.createTextNode(txt.slice(last)));n.parentNode.replaceChild(frag,n);
+    });
+  }
+  walk(document.querySelector('.wrap'));
+  // 地图上的地名
+  document.querySelectorAll('.m-node text:not(.m-sub)').forEach(function(t){
+    var k=t.textContent.trim();var en=map[k];if(!en)return;var NS='http://www.w3.org/2000/svg';
+    if(t.closest('.m-inset')){var e=document.createElementNS(NS,'text');e.setAttribute('x',t.getAttribute('x'));e.setAttribute('y',+t.getAttribute('y')+12);
+      if(t.getAttribute('text-anchor'))e.setAttribute('text-anchor',t.getAttribute('text-anchor'));e.setAttribute('class','m-en');e.textContent=en;t.parentNode.appendChild(e);return}
+    var ts=document.createElementNS(NS,'tspan');ts.setAttribute('class','m-en');ts.textContent=' '+en;t.appendChild(ts);
+  });
+})();
+
+(function(){
+  document.querySelectorAll('.tbl table').forEach(function(t){
+    var h=[].map.call(t.querySelectorAll('thead th'),function(x){return x.textContent.trim()});
+    if(!h.length)return;
+    t.querySelectorAll('tbody tr').forEach(function(r){[].forEach.call(r.children,function(c,i){if(h[i])c.setAttribute('data-label',h[i])})});
+  });
+})();
+</script>
